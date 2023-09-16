@@ -71,7 +71,7 @@ export default function Home() {
             </div>  
             <img className='adesivo' src='../assets/img/adesivo-g.png'></img>
           </div>
-         <p className='p'>APENAS ARTE, NÃO VANDALISMO.</p>
+         <p className='p'>APENAS ARTE, NÃO VANDALISMO</p>
         </div>
         
 

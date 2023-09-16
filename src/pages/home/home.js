@@ -1,21 +1,53 @@
-import Cabecalho from '../components/cabecalho'
+import Cabecalho from '../../components/cabecalho'
 import './home.scss';
-import React from 'react';
-import Rodape from '../components/rodape';
+import React, { useEffect, useState } from 'react';
+import Rodape from '../../components/rodape';
+import { Element, scroller } from 'react-scroll'; // Importe o 'scroller' de 'react-scroll'
+
 
 export default function Home() {
+
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!hasScrolled && window.scrollY > 100) {
+        setHasScrolled(true);
+        scrollToContent();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [hasScrolled]);
+
+  const scrollToContent = () => {
+    scroller.scrollTo('content', {
+      duration: 4000, // Ajuste a duração conforme necessário
+      delay: 4,
+      smooth: 'easeInOutQuart', // Efeito de rolagem suave
+    });
+  };
+
   return (
 
     <header className="Home">
       <Cabecalho />
 
-      <div className="inicial">
+    <Element name='top'>
+    
+    <div className='inicial'>
         <h1>Colors Rain</h1>
         <h5>UMA CHUVA DE VARIEDADES</h5>
         <p>Variedades de tintas com o melhor  preço do mercado, para todos os tipos de ambientes.</p>
         <button>Saiba mais</button>
+       
       </div>
-
+      
+      
       <section className='marcas'>
         <img src='/assets/img/marcas1.png'></img>
         <img src='/assets/img/marcas2.png'></img>
@@ -23,8 +55,10 @@ export default function Home() {
         <img src='/assets/img/marcas4.png'></img>
         <img src='/assets/img/marcas5.png'></img>
       </section>
-
-      <section className='faixas'>
+      
+      <Element name="content">
+      
+      <section className={`faixas ${hasScrolled ? 'scroll-animation show' : 'scroll-animation'}`}>
         <div className='azul'>
 
           <div>
@@ -71,11 +105,13 @@ export default function Home() {
             </div>  
             <img className='adesivo' src='../assets/img/adesivo-g.png'></img>
           </div>
-         <p className='p'>APENAS ARTE, NÃO VANDALISMO</p>
+         <p className='p'>APENAS ARTE, NÃO VANDALISMO.</p>
         </div>
         
 
       </section>
+      </Element>
+      </Element>
       <Rodape/>
     </header>
   )

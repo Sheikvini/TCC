@@ -1,4 +1,14 @@
-
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(20px); /* Opcional: pode ajustar o deslocamento vertical */
+    transition: opacity 1s, transform 1s;
+  }
+  
+  /* Classe para mostrar o elemento após a animação */
+  .scroll-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .Home {
 
@@ -9,7 +19,7 @@
         height: 500px;
         display: flex;
         flex-direction: column;
-        background-image: url(../../public/assets/img/inicial.png);
+        background-image: url(../../../public/assets/img/inicial.png);
         background-size: 530px;
         background-position: bottom right;
         background-repeat: no-repeat;
@@ -145,7 +155,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            background-image: url(../../public/assets/img/tintainternas.jpeg);
+            background-image: url(../../../public/assets/img/tintainternas.jpeg);
             background-repeat: no-repeat;
             background-position: cover;
             width: 900px;
@@ -192,7 +202,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            background-image: url(../../public/assets/img/tintaexterna5.jpg);
+            background-image: url(../../../public/assets/img/tintaexterna5.jpg);
             background-repeat: no-repeat;
             background-position: cover;
             width: 900px;
@@ -240,7 +250,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            background-image: url(../../public/assets/img/g.webp);
+            background-image: url(../../../public/assets/img/g.webp);
             background-repeat: no-repeat;
             background-position: cover;
             width: 900px;

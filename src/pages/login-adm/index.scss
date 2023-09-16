@@ -1,0 +1,127 @@
+.cont-login-adm{
+    display: flex;
+    background-image: url(../../../public/assets/img/login-img-fundo.png);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .log-adm{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        justify-content: flex-start;
+        width: 25vw;
+        height: 45vh;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px 2px #848484;
+        text-align: center;
+        padding: 10px;
+        
+        .logo{
+            display: flex;
+            height: 70px;
+                 
+        }
+    
+
+        .titulos-login-adm{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+            h2{
+                text-align: center;
+                position: relative;
+                bottom: 25px;
+            
+            }
+
+            h3{
+                text-align: center;
+                
+                position: relative;
+                bottom: 55px;
+            }
+        
+        }
+
+        .google-adm{
+            position: relative;
+            bottom: 55px;
+        }
+    
+        span{
+            
+            position: relative;
+            bottom: 60px;
+            
+
+            h4{
+                text-align: left;
+                
+            }
+
+            .caixa-text-adm{
+                display: flex;
+                flex-direction: column;
+                font-weight: 600;
+                border-radius: 10px;
+                background-color: #54a4ff57;
+                padding: 2px;
+                width: 360px;
+                border: none;
+                margin-top: -10px;
+                padding-left: 20px;
+
+            input{
+                
+                    border: none;
+                    outline: none;
+                    background: none;
+                    height: 20px;
+                    font-weight: 200;
+                    
+                }
+            }
+
+            .caixa-text2-adm{
+                display: flex;
+                flex-direction: column;
+                font-weight: 600;
+                border-radius: 10px;
+                background-color: #54a4ff57;
+                padding: 2px;
+                width: 360px;
+                border: none;
+                margin-top: -10px;
+                padding-left: 20px;
+
+            input{
+                    border: none;
+                    outline: none;
+                    background: none;
+                    height: 20px;
+                    font-weight: 200;
+                }
+            }
+
+            .esq-senha-adm{
+                display: flex;
+                font-size: 9px;
+                font-weight: 500;
+                text-align: left;
+                margin-top: 5px;
+                text-decoration: underline;
+            }
+        }
+
+        
+    }
+
+}

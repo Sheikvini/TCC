@@ -5,7 +5,7 @@ import Home from './pages/home/home.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/login/index.js';
 import Loginadm from './pages/login-adm';
-
+import Cadastro from './pages/cadastro-cliente';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +14,8 @@ root.render(
     <Routes>
       <Route path='/' element={<Home />}  />
       <Route path='/login' element={<Login />}  />
-      <Route path='/login-adm' element={<Loginadm />} />''
+      <Route path='/login-adm' element={<Loginadm />} />
+      <Route path='/login-cadastro' element={<Cadastro />} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

@@ -8,6 +8,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .botao-voltar2{
+        display: flex;
+        position: relative;
+        right: 850px;
+        bottom: 180px;
+    }
     
     .log-adm{
         display: flex;

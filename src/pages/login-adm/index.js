@@ -1,5 +1,5 @@
 import './index.scss';
-
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 const Loginadm = ({ onSearch }) => {
@@ -20,7 +20,9 @@ const Loginadm = ({ onSearch }) => {
 
     return(
         <header className='cont-login-adm'>
-            
+            <Link to="/">
+                <img className='botao-voltar2' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
+            </Link>
             <section className='log-adm'>
                 <div className='titulos-login-adm'>
                     <img className='logo' src='/assets/img/logo.png'/>

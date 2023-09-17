@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "./index.scss"
-import { Link } from 'react-router-dom';
 
 const Header = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -17,9 +16,7 @@ const Header = ({ onSearch }) => {
     <header className="principal">
       
       <section className='cont'>
-        <Link to="/">
-          <img src="/assets/img/logo.png" alt="Voltar" />
-        </Link>
+        <img src='../assets/img/logo.png'></img>
         <div className="search-bar">
           <input
             type="text"
@@ -46,13 +43,6 @@ const Header = ({ onSearch }) => {
         <hr className='roxo'/>
         <hr className='verde'/>
         <hr className='rosa'/>
-      </section>
-
-      <section className='sub-menu'>
-        <a className='h'>Home</a>
-        <a className='p'>Produto</a>
-        <a className='sp'>Selecione um Produto</a>
-        <a className='sn'>Sobre nós</a>
       </section>
 
     </header>

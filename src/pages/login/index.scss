@@ -9,11 +9,18 @@
     align-items: center;
     flex-direction: column;
     
+    .botao-voltar{
+        display: flex;
+        position: relative;
+        right: 850px;
+        bottom: 50px;
+    }
+
     .log{
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        justify-content: flex-start;
+        justify-content: center;
         width: 25vw;
         height: 70vh;
         border-radius: 10px;

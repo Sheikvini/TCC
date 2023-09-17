@@ -3,7 +3,7 @@ import './home.scss';
 import React, { useEffect, useState } from 'react';
 import Rodape from '../../components/rodape';
 import { Element, scroller } from 'react-scroll'; // Importe o 'scroller' de 'react-scroll'
-
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 
@@ -43,7 +43,9 @@ export default function Home() {
         <h1>Colors Rain</h1>
         <h5>UMA CHUVA DE VARIEDADES</h5>
         <p>Variedades de tintas com o melhor  preço do mercado, para todos os tipos de ambientes.</p>
-        <button>Saiba mais</button>
+        <Link to="/">
+          <button>Saiba mais</button>
+        </Link>
        
       </div>
       
@@ -67,7 +69,9 @@ export default function Home() {
             <img src='/assets/img/balde.png'></img>
           </div>
           <div>
-            <button>QUIZ</button>
+          <Link to="/">
+          <button>QUIZ</button>
+          </Link>
             <p></p>
             <img src='/assets/img/balde.png'></img>
           </div>
@@ -77,7 +81,9 @@ export default function Home() {
          <div>
             <h1>Tintas Internas</h1>
             <p>Descubra as melhores indicações para o seu ambiente interno</p>
-            <button>Saiba Mais</button>
+            <Link to="/tintasinternas">
+              <button>Saiba mais</button>
+            </Link>
             <p></p>
           </div>
          
@@ -89,7 +95,9 @@ export default function Home() {
          <div>
             <h1>Tintas Externas</h1>
             <p>Descubra as melhores indicações para o seu ambiente externos</p>
-            <button>Saiba Mais</button>
+            <Link to="/tintasexternas">
+              <button>Saiba mais</button>
+            </Link>
             <p></p>
           </div>
          
@@ -101,7 +109,9 @@ export default function Home() {
             <div className='g'>  
               <h1>Street Art</h1>
               <p>O grafite é uma forma de expressar a arte e os seus movimentos, explorando a vida por meio das cores</p>
-              <button>Saiba Mais</button>
+              <Link to="/espacografite">
+                <button>Saiba mais</button>
+              </Link>
             </div>  
             <img className='adesivo' src='../assets/img/adesivo-g.png'></img>
           </div>

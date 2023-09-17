@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "./index.scss"
 import { Link } from 'react-router-dom';
-
 const Header = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
 
@@ -49,8 +48,8 @@ const Header = ({ onSearch }) => {
       </section>
 
       <section className='sub-menu'>
-        <a className='h'>Home</a>
-        <a className='p'>Produto</a>
+        <a className='h' href='/'>Home</a>
+        <a className='p' href='/tintasinternas'>Produto</a>
         <a className='sp'>Selecione um Produto</a>
         <a className='sn'>Sobre nós</a>
       </section>

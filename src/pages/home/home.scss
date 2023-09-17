@@ -9,9 +9,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+     
 
 .Home {
-
+    
     flex-direction: column;
 
     .inicial {
@@ -33,6 +34,8 @@
             font-size: 60px;
             max-width: 900px;
             justify-content: center;
+            font-family: 'Architects Daughter', cursive;
+            
         }
 
         h5 {
@@ -44,6 +47,7 @@
             font-size: 30px;
             color: #2B75CB;
             max-width: 800px;
+            font-family: 'Quicksand', sans-serif;
         }
 
         p {
@@ -53,11 +57,11 @@
             left: 30px;
             max-width: 400px;
             bottom: 100px;
-            text-align: left;
-            font-family: Quicksand;
+            text-align: CENTER;
+            font-family: 'Quicksand', sans-serif;
             font-size: 20px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             line-height: normal;
         }
 
@@ -72,7 +76,7 @@
             color: #fff;
             align-items: center;
             position: relative;
-            left: 120px;
+            left: 160px;
             bottom: 100px;
         }
     }
@@ -118,9 +122,10 @@
                 justify-content: center;
 
                 h1 {
+                    
                     color: #2B75CB;
                     margin-top: 60px;
-                }
+                  }
 
                 button {
                     margin-top: 80px;
@@ -269,8 +274,7 @@
                         position: relative;
                         bottom: 60px;
                     }
-
-                    .g{
+               .g{
                         display: flex;
                         flex-direction: column;
                         position: relative;

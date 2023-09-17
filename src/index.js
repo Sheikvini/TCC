@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/login/index.js';
 import Loginadm from './pages/login-adm';
 import Cadastro from './pages/cadastro-cliente';
+import Tintasinternas from './pages/tintasinternas';
+import Tintasexternas from './pages/tintasexternas';
+import Espacografite from './pages/espacografite';
+import Pinceis from './pages/pinceis';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +20,10 @@ root.render(
       <Route path='/login' element={<Login />}  />
       <Route path='/login-adm' element={<Loginadm />} />
       <Route path='/login-cadastro' element={<Cadastro />} />
+      <Route path='/tintasinternas' element={<Tintasinternas />} />
+      <Route path='/tintasexternas' element={<Tintasexternas />} />
+      <Route path='/espacografite' element={<Espacografite />} />
+      <Route path='/pinceis' element={<Pinceis/>} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

@@ -1,6 +1,7 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import Cabecalho from '../../components/cabecalho-semrotas'
 
 const Login = ({ onSearch }) => {
     
@@ -22,7 +23,8 @@ const Login = ({ onSearch }) => {
 
     return(
         <header className='cont-login'>
-            
+           
+        
             <Link to="/">
                 <img className='botao-voltar' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
             </Link>

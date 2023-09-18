@@ -4,7 +4,7 @@
     transition: opacity 1s, transform 1s;
   }
   
-  /* Classe para mostrar o elemento após a animação */
+  // Classe para mostrar o elemento após a animação //
   .scroll-animation.show {
     opacity: 1;
     transform: translateY(0);

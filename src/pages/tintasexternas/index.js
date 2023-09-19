@@ -1,12 +1,15 @@
 import Cabecalho from "../../components/cabecalho"
+import Rodape from "../../components/rodape"
 import "./index.scss"
 
 export default function Tintasexternas() {
 
     return(
-        <div className="tintasexternas">
+        <article>
 
-            <Cabecalho/>
+        <Cabecalho/>
+
+        <div className="tintasexternas">
 
         
             <h1>Tintas Externas</h1>
@@ -98,7 +101,7 @@ export default function Tintasexternas() {
                <a> 1</a>
                <a> 2</a>
                <a> 3</a>
-               <a> Prómixo </a>
+               <a> Próximo </a>
 
              </nav>
             <img src="/assets/img/logo.png"></img>
@@ -106,7 +109,8 @@ export default function Tintasexternas() {
 
 
         </div>
-
-
+          
+        </article>
+    
     )
 }

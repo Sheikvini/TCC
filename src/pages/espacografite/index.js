@@ -5,9 +5,11 @@ export default function Espacografite() {
 
     return(
 
+        <article>
+        <Cabecalho/>
         <div className="espacografite">
 
-            <Cabecalho/>
+            
                 <h1>Espaço Grafite</h1>
             <div> 
                 
@@ -91,17 +93,11 @@ export default function Espacografite() {
 
 
            </div>
-           <nav> 
-               <a> 1</a>
-               <a> 2</a>
-               <a> 3</a>
-               <a> Prómixo </a>
-
-             </nav>
+           
             <img src="/assets/img/logo.png"></img>
 
-
-
         </div>
+        </article>
+
     )
 }

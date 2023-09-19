@@ -22,6 +22,8 @@ const Login = ({ onSearch }) => {
     
 
     return(
+        <article className='cont-cadastro'>
+            <Cabecalho/>
         <header className='cont-login'>
            
         
@@ -88,6 +90,7 @@ const Login = ({ onSearch }) => {
             </section>
             
         </header>
+        </article>
     );
 }
 

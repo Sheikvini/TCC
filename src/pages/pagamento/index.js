@@ -1,11 +1,10 @@
 import './index.scss';
-import Cadastrocliente from '../../components/cadastro/cadastrocliente.js';
+import Pagamento from '../../components/pagamento/index.js';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Emailesenha from '../../components/emailsenha/emailesenha.js';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 
-export default function Cadastro() {
+export default function Cagamento() {
   const handleClick = () => {
     
     alert('Botão "Finalizar" clicado!');
@@ -14,7 +13,7 @@ export default function Cadastro() {
   return (
 <article className='cont-cadastro'>
   <Cabecalho/>  
-    <header className="cadastro">
+    <header className="pagamento">
       
             <Link to="/login">
                 <img className='botao-voltar1' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
@@ -26,8 +25,7 @@ export default function Cadastro() {
           <h1 className='h1'>*CAMPO OBRIGATÓRIO </h1>
         </div>
 
-        <Cadastrocliente />
-        <Emailesenha />
+        <Pagamento />
 
         <button className='finalizar' onClick={handleClick}>Finalizar</button>
       </div>

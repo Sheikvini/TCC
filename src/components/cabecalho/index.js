@@ -56,6 +56,6 @@ const Header = ({ onSearch }) => {
 
     </header>
   );
-};
+}
 
 export default Header;

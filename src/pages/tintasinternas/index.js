@@ -4,9 +4,11 @@ import "./index.scss"
 export default function Tintasinternas() {
 
     return (
+    <article>
+    <Cabecalho />
         <div className="tintasinternas">
 
-            <Cabecalho />
+            
             <h1>  Tintas Internas </h1>
 
                 <div> 
@@ -91,10 +93,11 @@ export default function Tintasinternas() {
                     <a> 1</a>
                     <a> 2</a>
                     <a> 3</a>
-                    <a> Prómixo </a>
+                    <a> Próximo </a>
 
              </nav>
             <img src="/assets/img/logo.png"></img>
         </div>
+        </article>
     )
 }

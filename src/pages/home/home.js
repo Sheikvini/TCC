@@ -26,8 +26,8 @@ export default function Home() {
 
   const scrollToContent = () => {
     scroller.scrollTo('content', {
-      duration: 4000, // Ajuste a duração conforme necessário
-      delay: 4,
+      duration: 7000, // Ajuste a duração conforme necessário
+      delay: 10,
       smooth: 'easeInOutQuart', // Efeito de rolagem suave
     });
   };

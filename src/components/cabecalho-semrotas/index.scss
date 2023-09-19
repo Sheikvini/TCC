@@ -1,5 +1,5 @@
 
-.principal
+.principal-sn
 {
     display: flex;
     flex-direction: column;
@@ -7,11 +7,10 @@
     height: 90px;
     justify-content: center;
     position: relative;
-    bottom: 20px;
     width: 100%;
-    right: 10px;
+    
 
-    .cont
+    .cont-sn
     {
         display: flex;
         position: relative;
@@ -59,35 +58,35 @@
 
 
 
-    .paginas{
+    .paginas-sn{
         display: flex;
         flex-direction: row;  
         position: relative;
         top: 3.5px;
         
         
-        .vermelho{
+        .vermelho-sn{
             width: 25%;
             height: 2px;
             background-color:#f70000;
             border: none;
         }
 
-        .roxo{
+        .roxo-sn{
             width: 25%;
             height: 2px;
             background-color:#5f00f7;
             border: none;
         }
 
-        .verde{
+        .verde-sn{
             width: 25%;
             height: 2px;
             background-color:#00f70c;
             border: none;
         }
 
-        .rosa{
+        .rosa-sn{
             width: 25%;
             height: 2px;
             background-color:#f700eb;

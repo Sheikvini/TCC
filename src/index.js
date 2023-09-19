@@ -10,6 +10,7 @@ import Tintasinternas from './pages/tintasinternas';
 import Tintasexternas from './pages/tintasexternas';
 import Espacografite from './pages/espacografite';
 import Pinceis from './pages/pinceis';
+import Pagamento from './pages/pagamento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
       <Route path='/tintasexternas' element={<Tintasexternas />} />
       <Route path='/espacografite' element={<Espacografite />} />
       <Route path='/pinceis' element={<Pinceis/>} />
+      <Route path='/pagamento' element={<Pagamento/>} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

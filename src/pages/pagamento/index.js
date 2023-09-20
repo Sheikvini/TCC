@@ -15,7 +15,7 @@ export default function Cagamento() {
   <Cabecalho/>  
     <header className="pagamento">
       
-            <Link to="/login">
+            <Link to="/">
                 <img className='botao-voltar1' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
             </Link>
       <article>  

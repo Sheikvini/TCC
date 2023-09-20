@@ -40,10 +40,6 @@ const Login = ({ onSearch }) => {
                     <h2>Colors Rain</h2>
                     <h3>Bem Vindo a nossa chuva de cores </h3>
                 </div>
-                
-                <a href="URL_DE_AUTORIZACAO" class="google-login-button">
-                <img  className='google' src="/assets/img/icon/google.png" alt="Login com o Google"/>
-                </a>
 
                 <span>
                     <h4> Email:</h4>

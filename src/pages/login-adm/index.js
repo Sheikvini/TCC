@@ -1,6 +1,7 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import Cabecalho from '../../components/cabecalho-semrotas'
 
 const Loginadm = ({ onSearch }) => {
     const [valorInput1, setValorInput1] = useState('');
@@ -19,6 +20,8 @@ const Loginadm = ({ onSearch }) => {
     
 
     return(
+        <article className='cont-cadastro'>
+            <Cabecalho/>
         <header className='cont-login-adm'>
             <Link to="/">
                 <img className='botao-voltar2' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
@@ -32,10 +35,6 @@ const Loginadm = ({ onSearch }) => {
                     <h2>Colors Rain</h2>
                     <h3>Bem Vindo administrador </h3>
                 </div>
-                
-                <a href="URL_DE_AUTORIZACAO" class="google-login-button">
-                <img  className='google-adm' src="/assets/img/icon/google.png" alt="Login com o Google"/>
-                </a>
 
                 <span>
                     <h4 className='email-adm'>Email:</h4>
@@ -72,6 +71,7 @@ const Loginadm = ({ onSearch }) => {
             </section>
             
         </header>
+        </article>
     );
 }
 

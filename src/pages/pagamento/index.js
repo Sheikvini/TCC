@@ -11,13 +11,17 @@ export default function Cagamento() {
   };
 
   return (
+  
 <article className='cont-cadastro'>
-  <Cabecalho/>  
+    <Cabecalho/>
     <header className="pagamento">
-      
-            <Link to="/">
+      <div className='ti'><h2>Pagamento</h2>
+      </div>
+      <Link to="/">
                 <img className='botao-voltar1' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
             </Link>
+            
+            
       <article>  
       <div className="bordatrasparente">
         <div>

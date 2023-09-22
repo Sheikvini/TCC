@@ -5,20 +5,35 @@
     
     .botao-voltar1{
       display: flex;
-            position: relative;
-            left: 60px;
-            top: 20px;
+      position: absolute;      
+      top: 100px;
+      
     }
     
+    
+
     .pagamento {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      background-image: url(../../../public/assets/img/fundo3.png);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-image: url(../../../public/assets/img/fundo3.png);
         background-repeat: no-repeat;
         background-size: 110%;
         width: 100%;
         height: 100%;
+        align-items: center;
+        
+       
+        .ti{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          
+          width: 140px;
+          position: relative;
+          top: 30px;
+        }
         
     }
     

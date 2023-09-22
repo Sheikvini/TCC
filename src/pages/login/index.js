@@ -1,25 +1,44 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Cabecalho from '../../components/cabecalho-semrotas'
-
-const Login = ({ onSearch }) => {
+import axios from 'axios';
+import { LoginContext } from '../../context';
+const Login = () => {
     
-    const [valorInput1, setValorInput1] = useState('');
-    const [valorInput2, setValorInput2] = useState('');
-    
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [message, setMessage] = useState('');
       // Funções para lidar com a mudança nos inputs
       const handleChangeInput1 = (e) => {
-        setValorInput1(e.target.value);
+        setEmail(e.target.value);
       };
     
       const handleChangeInput2 = (e) => {
-        setValorInput2(e.target.value);
+        setSenha(e.target.value);
         };
-    
+        
 
+        const loginContext = useContext(LoginContext);
 
-    
+        async function entrar() {
+            try {
+              const response = await axios.post('http://localhost:5000/login', {
+                email,
+                senha,
+              });
+        
+              if (response.status === 200) {
+                loginContext.logar();
+                window.location.href = 'http://localhost:3000/';
+              } else {
+                setMessage('⚠ Login ou senha incorretos');
+              }
+            } catch (error) {
+              console.error('⚠ Erro ao verificar as credenciais:', error);
+              setMessage('⚠ Erro ao verificar as credenciais. Tente novamente mais tarde.');
+            }
+          }
 
     return(
         <article className='cont-cadastro'>
@@ -50,7 +69,7 @@ const Login = ({ onSearch }) => {
                            
                            placeholder="Insira seu email aqui..."
                            type="text"
-                           value={valorInput1}
+                           value={email}
                            onChange={handleChangeInput1}
                        />
                             
@@ -63,16 +82,19 @@ const Login = ({ onSearch }) => {
                         <input
                             placeholder="Digite sua senha"
                             type="password"
-                            value={valorInput2}
+                            value={senha}
                             onChange={handleChangeInput2}
                         />
                     </div>
 
                     <a className='esq-senha'>
                         Esqueci minha senha
-                    </a>    
+                    </a>   
+                     <button onClick={entrar}>Entrar</button>
+                     <p>{message}</p>
                 </span>
 
+                
                 <div className='req-senha'>
                     <p>Requisitos para senha:</p>
                     <li>Pelo menos uma leta maiúscula</li>

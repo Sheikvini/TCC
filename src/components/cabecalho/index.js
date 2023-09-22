@@ -12,6 +12,12 @@ const Header = ({ onSearch }) => {
     onSearch(searchValue);
   };
 
+  const [ValorSelecionado, setValorSelecionado] = useState('');
+  const handleSelecaoChange = (event) =>
+    {
+      setValorSelecionado(event.target.value);
+    };
+
   return (
     <header className="principal">
       
@@ -49,7 +55,8 @@ const Header = ({ onSearch }) => {
 
       <section className='sub-menu'>
         <a className='h' href='/'>Home</a>
-        <a className='p' href='/tintasinternas'>Produto</a>
+        <a className='p' href='/login'>login</a>
+
         <a className='sp'>Selecione um Produto</a>
         <a className='sn'>Sobre nós</a>
       </section>

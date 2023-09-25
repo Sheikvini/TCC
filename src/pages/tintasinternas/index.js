@@ -1,5 +1,6 @@
 import Cabecalho from "../../components/cabecalho"
 import "./index.scss"
+import Rodape from "../../components/rodape"
 
 export default function Tintasinternas() {
 
@@ -98,6 +99,7 @@ export default function Tintasinternas() {
              </nav>
             <img src="/assets/img/logo.png"></img>
         </div>
+        <Rodape/>
         </article>
     )
 }

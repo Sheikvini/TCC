@@ -109,7 +109,7 @@ export default function Tintasexternas() {
 
 
         </div>
-          
+          <Rodape/>
         </article>
     
     )

@@ -1,27 +1,49 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useContext,useState } from 'react';
 import Cabecalho from '../../components/cabecalho-semrotas'
+import axios from 'axios';
+import { LoginContext } from '../../context';
+const Loginadm = () => {
+    
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [message, setMessage] = useState('');
+      // Funções para lidar com a mudança nos inputs
+      const handleChangeInput1 = (e) => {
+        setEmail(e.target.value);
+      };
+    
+      const handleChangeInput2 = (e) => {
+        setSenha(e.target.value);
+        };
+        
 
-const Loginadm = ({ onSearch }) => {
-    const [valorInput1, setValorInput1] = useState('');
-  const [valorInput2, setValorInput2] = useState('');
+        const loginContext = useContext(LoginContext);
 
-  // Funções para lidar com a mudança nos inputs
-  const handleChangeInput1 = (e) => {
-    setValorInput1(e.target.value);
-  };
-
-  const handleChangeInput2 = (e) => {
-    setValorInput2(e.target.value);
-    };
-
-
+        async function entrar() {
+            try {
+              const response = await axios.post('http://localhost:5000/login', {
+                email,
+                senha,
+              });
+        
+              if (response.status === 200) {
+                loginContext.logar();
+                window.location.href = 'http://localhost:3000/';
+              } else {
+                setMessage('⚠ Login ou senha incorretos');
+              }
+            } catch (error) {
+              console.error('⚠ Erro ao verificar as credenciais:', error);
+              setMessage('⚠ Erro ao verificar as credenciais. Tente novamente mais tarde.');
+            }
+          }
     
 
     return(
         <article className='cont-cadastro'>
-            <Cabecalho/>
+          
         <header className='cont-login-adm'>
             <Link to="/">
                 <img className='botao-voltar2' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
@@ -44,7 +66,7 @@ const Loginadm = ({ onSearch }) => {
                         <input
                             placeholder="Insira seu email aqui..."
                             type="text"
-                            value={valorInput1}
+                            value={email}
                             onChange={handleChangeInput1}
                         />
                             
@@ -57,7 +79,7 @@ const Loginadm = ({ onSearch }) => {
                         <input
                             placeholder="Digite sua senha"
                             type="password"
-                            value={valorInput2}
+                            value={senha}
                             onChange={handleChangeInput2}
                         />
                     </div>
@@ -65,6 +87,8 @@ const Loginadm = ({ onSearch }) => {
                     <a className='esq-senha-adm'>
                         Esqueci minha senha
                     </a>    
+                    <button onClick={entrar}>Entrar</button>
+                     <p>{message}</p>
                 </span>
 
 

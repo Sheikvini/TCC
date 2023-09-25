@@ -13,7 +13,7 @@ export default function Cadastro() {
 
   return (
 <article className='cont-cadastro'>
-  <Cabecalho/>  
+
     <header className="cadastro">
       
             <Link to="/login">

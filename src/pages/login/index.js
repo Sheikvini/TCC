@@ -42,7 +42,7 @@ const Login = () => {
 
     return(
         <article className='cont-cadastro'>
-            <Cabecalho/>
+           
         <header className='cont-login'>
            
         

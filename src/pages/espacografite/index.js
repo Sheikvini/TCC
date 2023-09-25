@@ -1,6 +1,6 @@
 import Cabecalho from "../../components/cabecalho"
 import "./index.scss"
-
+import Rodape from "../../components/rodape"
 export default function Espacografite() {
 
     return(
@@ -97,6 +97,7 @@ export default function Espacografite() {
             <img src="/assets/img/logo.png"></img>
 
         </div>
+        <Rodape/>
         </article>
 
     )

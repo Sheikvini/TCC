@@ -11,6 +11,13 @@ import Tintasexternas from './pages/tintasexternas';
 import Espacografite from './pages/espacografite';
 import Pinceis from './pages/pinceis';
 import Pagamento from './pages/pagamento';
+import Homej from './pages/jogo/home'
+import Game from './pages/jogo/game';
+import Hard from './pages/jogo/hard';
+import Easy from './pages/jogo/easy';
+import Normal from './pages/jogo/normal';
+import Card from './components/card';
+import Congratulations from './pages/jogo/congratulations';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +33,13 @@ root.render(
       <Route path='/espacografite' element={<Espacografite />} />
       <Route path='/pinceis' element={<Pinceis/>} />
       <Route path='/pagamento' element={<Pagamento/>} />
+      <Route path='/homej' element={<Homej/>} />
+      <Route path='/homej/jogo-da-memória' element={<Game />} />
+      <Route path='/hard' element={<Hard />} />
+      <Route path='/easy' element={<Easy/>} />
+      <Route path='/normal' element={<Normal/>} />
+      <Route path='/teste' element={<Card/>} />        
+      <Route path='/congratulations' element={<Congratulations />} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

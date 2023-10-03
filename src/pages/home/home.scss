@@ -106,29 +106,18 @@
 
         .azul {
             height:470px ;
+            width: 900px;
             padding: 20px;
             border-radius: 15px;
             margin-top: 40px;
-            background-color: #A3CDFF;
+            background-image: url(../../../public/assets/img/memory.png);
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
 
-            div {
-                height: 500px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                h1 {
-                    
-                    color: #2B75CB;
-                    margin-top: 60px;
-                  }
-
                 button {
-                    margin-top: 80px;
+                    margin-top: 130px;
                     border: none;
                     height: 40px;
                     width: 180px;
@@ -136,19 +125,18 @@
                     background-color: #2B75CB;
                     padding: 10px 20px;
                     border-radius: 15px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                    
                 }
-
-                p {
-                    font-weight: 600;
-                    font-size: 18px;
-                    width: 400px;
-                    text-align: center;
+                
+                /* Estilos ao passar o mouse */
+                button:hover {
+                    background-color: #ffffff;
+                    color: #2B75CB;
+                    box-shadow: 1px 1px 1px 1px #73a0d4;
                 }
-
-                img {
-                    width: 450px;
-                }
-            }
+            
         }
         
         .internas{
@@ -186,8 +174,18 @@
                         background-color: #2B75CB;
                         padding: 10px 20px;
                         border-radius: 15px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                        box-shadow: 1px 1px 1px 1px #c1c1c1;
                     }
-        
+                    
+                    /* Estilos ao passar o mouse */
+                    button:hover {
+                        background-color: #ffffff;
+                        color: #2B75CB;
+                        
+                    }
+
                     p {
                         font-weight: 600;
                         font-size: 18px;
@@ -233,6 +231,16 @@
                         background-color: #2B75CB;
                         padding: 10px 20px;
                         border-radius: 15px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                        box-shadow: 1px 1px 1px 1px #c1c1c1;
+                    }
+                    
+                    /* Estilos ao passar o mouse */
+                    button:hover {
+                        background-color: #ffffff;
+                        color: #2B75CB;
+                        
                     }
         
                     p {
@@ -294,7 +302,17 @@
                             background-color: #2B75CB;
                             padding: 10px 20px;
                             border-radius: 15px;
-                        }
+                            cursor: pointer;
+                            transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                            box-shadow: 1px 1px 1px 1px #c1c1c1;
+                    }
+                    
+                    /* Estilos ao passar o mouse */
+                        button:hover {
+                            background-color: #ffffff;
+                            color: #2B75CB;
+                        
+                    }
             
                         p {
                             font-weight: 600;

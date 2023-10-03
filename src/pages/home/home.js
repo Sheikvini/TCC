@@ -62,18 +62,10 @@ export default function Home() {
       
       <section className={`faixas ${hasScrolled ? 'scroll-animation show' : 'scroll-animation'}`}>
         <div className='azul'>
-
           <div>
-            <h1>Colors QUIZ</h1>
-            <p>Descubra mais sobre tintas e ambientes com o nosso quiz</p>
-            <img src='/assets/img/balde.png'></img>
-          </div>
-          <div>
-          <Link to="/">
+          <Link to="/homej">
           <button>QUIZ</button>
           </Link>
-            <p></p>
-            <img src='/assets/img/balde.png'></img>
           </div>
         </div>
 

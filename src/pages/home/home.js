@@ -64,7 +64,7 @@ export default function Home() {
         <div className='azul'>
           <div>
           <Link to="/homej">
-          <button>QUIZ</button>
+          <button>GAME</button>
           </Link>
           </div>
         </div>

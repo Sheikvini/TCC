@@ -18,6 +18,8 @@ import Easy from './pages/jogo/easy';
 import Normal from './pages/jogo/normal';
 import Card from './components/card';
 import Congratulations from './pages/jogo/congratulations';
+import Carrinho from './pages/carrinho/carrinho';
+import Telaadm from './pages/telaadm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -40,6 +42,8 @@ root.render(
       <Route path='/normal' element={<Normal/>} />
       <Route path='/teste' element={<Card/>} />        
       <Route path='/congratulations' element={<Congratulations />} />
+      <Route path='/carrinho' element={<Carrinho />} />
+      <Route path='/telaadm' element={<Telaadm />} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

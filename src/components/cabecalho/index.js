@@ -65,6 +65,6 @@ const Header = ({ onSearch }) => {
   );
 }
 
-/////////////////////////////////////////// paulinho loko
+/////////////////////////////////////////// paulinho lokooooooooooooooooooooooooooooo
 
 export default Header;

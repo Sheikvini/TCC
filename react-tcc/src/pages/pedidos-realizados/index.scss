@@ -1,0 +1,122 @@
+
+
+    .submenu-p_realizados{
+        display: flex;
+        position: relative;
+        
+        .C1{
+            position: relative;
+            border: none;
+            left: 140px;
+            font-size:15px ;
+            font-family: denk one;
+            background-color: white;
+            border-radius: 10px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .C1:hover{
+            color: #f70000;
+        }
+        
+        .link_mp1 {
+        position: relative;
+        left: 30%;
+        text-decoration: none; /* Isso vai remover o sublinhado de links dentro de elementos com a classe .link_mp */
+    
+      .MP1 {
+        display: flex;
+        align-items: center;
+        border: none;
+        font-family: denk one;
+        font-size: 15px;
+        color: #5f00f7;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      }
+    
+    .link_R1{
+      position: relative;
+      left: 50%;
+    
+      .R1{
+        align-items: center;
+        border: none;
+        font-family: denk one;
+        font-size: 15px;
+        transition: box-shadow 0.3s ;
+        background-color: white;
+        border-radius: 10px;
+      }
+      .R1:hover {
+        box-shadow: 0px 0px 10px #bdff00(253, 20, 20, 0.5); 
+        color: #00f70c;
+      }
+    }
+    
+    .link_TU1{
+      position: relative;
+      left: 72%;
+      
+        .TU1{
+          align-items: center;
+          border: none;
+          font-family: denk one;
+          font-size: 15px;
+          transition: box-shadow 0.4s ease ;
+          background-color: white;
+          border-radius:10px ;
+        }
+        .TU1:hover {
+          box-shadow: 0px 0px 10px #e700a6(253, 20, 20, 0.5); 
+          color: #f700eb;
+        }
+    }
+    }
+
+    .container-p_realizados {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        
+        
+        .botao-voltar50{
+            display: flex;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            margin-left: 25px;
+        }
+        
+        .Mp1{
+            display: flex;
+            justify-content: center;
+            width: 190px;
+            font-size: 19px;
+            letter-spacing: 1px;
+            position: relative;
+            left: 82vh;
+        }
+    }
+    
+     .linha1{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 100%;
+       
+        
+        .l1{
+            width: 50%;
+            background-color: #5f00f7;
+            height: 2px;
+        }
+    }
+
+    .rod-p_realizados{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }

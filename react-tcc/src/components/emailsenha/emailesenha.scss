@@ -1,0 +1,64 @@
+
+.caixinha2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -10px;
+    
+  }
+
+  .email{
+    border: 1px solid rgb(31, 64, 183);
+    border-radius: 20px;
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    padding: 6px 10px;
+    margin-left: 9px;
+    width: 300px;
+  }
+
+  .email > input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+  }
+
+  .email > button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+  }
+
+  
+
+  .senha  {
+    border: 1px solid rgb(31, 64, 183);
+    border-radius: 20px;
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    padding: 6px 10px;
+    margin-left: 9px;
+    width: 300px;
+  }
+
+  .senha > input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+  }
+
+  .senha > button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+  }
+
+
+
+  

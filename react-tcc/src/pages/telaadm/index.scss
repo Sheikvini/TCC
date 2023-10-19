@@ -1,0 +1,116 @@
+
+    .section{
+        display: flex;
+        flex-direction: column;
+}
+    
+
+    .cor{
+        background-color: #989898;
+        height: 690px;
+        width: 36%;
+        top: -18px;
+    }
+
+
+
+    .perfil{
+        position: relative;
+        top: -700px;
+        left: 100px;
+    }
+
+    .NI{
+        position: relative;
+        top: -635px;
+        left: 180px;
+        width: 10px;
+    }
+
+    .linha{
+        right: 32%;
+        width: 240px;
+        top: -690px;        
+    }
+
+    .tdpalavra{
+        left: 190px;
+        position: relative;
+        top: -570px;
+        width: 225px;
+        .F{
+            display: flex;
+            position: relative;
+            font-size: 16px;
+            top: -77px;
+            right: 35px;
+        }
+        .CP{
+            display: flex;
+            position: relative;
+            font-size: 16px;
+            top: -43px;
+            right: 35px;
+        }
+        .BD{
+            display: flex;
+            position: relative;
+            font-size: 16px;
+            top: -15px;
+            right: 35px;
+        }
+        .R{
+            position: relative;
+            display: flex;
+            top: -10px;
+            font-size: 16px;
+            right: 35px;
+        }
+        .P{
+            display: flex;
+            position: relative;
+            top: 5px;
+            font-size: 16px;
+            right: 35px;
+        }
+
+     }
+
+     .tdimg{
+        display: flex;
+        flex-direction: column;
+        
+        .FI{
+            left: 60px;
+            top: -890px;
+            position: relative;
+        }
+        .CPP{
+            position: relative;
+            top: -860px;
+            left: 40px;
+        }
+        .BDD{
+            position: relative;
+            top: -835px;
+            left: 60px;
+        }
+        .RE{
+            position: relative;
+            top: -825px;
+            left: 63px;
+        }
+        .PA{
+            position: relative;
+            top: -799px;
+            left: 65px;
+        }
+     }
+
+     .linha-baixo{
+       width: 240px;
+       top: -880px;
+     }
+     
+    
+    

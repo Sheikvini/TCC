@@ -12,7 +12,7 @@ let server = express();
 server.use(cors())
 server.use(express.json())
 
-server.use(Addproduto)
+server.use(Addproduto),
 server.use(listproduto)
 server.use(cadastroController)
 server.use(loginController)

@@ -5,15 +5,24 @@ use tcc;
 drop database tcc;
 
 create table tb_cliente(
- id_cliente		int primary key auto_increment,
- nm_cliente		varchar(200),
- ds_sex 		ENUM ('Feminino', 'Masculino','Prefiro não informar') NOT NULL,
+ id_cliente			int primary key auto_increment,
+ nm_cliente			varchar(200),
+ ds_sex 			ENUM ('Feminino', 'Masculino','Prefiro não informar'),
  dt_nascimento		date,
- ds_cpf			varchar(200),
+ ds_cpf				varchar(200),
  ds_telefone		varchar(200),
+ ds_tipo_endereco     varchar(100),
+ ds_cep                  dec(11),
+ ds_numero_complemento    varchar(100),
+ ds_rua                   varchar(100),
+ ds_bairro                varchar(100),
+ ds_cidade                varchar(100),
+ ds_estado	              varchar(100),
  ds_senha               varchar(200),
  ds_email               varchar(200)
 );
+
+drop table tb_cliente;
 
 create table tb_login (
 id_logi 	       		int primary key auto_increment,
@@ -22,6 +31,11 @@ ds_email                varchar(200),
 ds_senha                varchar(200),
 foreign key (id_cliente) references tb_cliente(id_cliente)
 );
+
+insert into tb_login (ds_email, ds_senha)
+values ('teste@gmail.com' , '1234');
+
+drop table tb_login;
 
 select * from tb_login;
 
@@ -141,3 +155,4 @@ and ds_senha 		= 'admin1234';
 
 delete from  tb_produto
 where  id_produto = 1;
+

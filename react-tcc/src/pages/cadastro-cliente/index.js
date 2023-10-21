@@ -1,16 +1,40 @@
 import './index.scss';
 import Cadastrocliente from '../../components/cadastro/cadastrocliente.js';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useContext, useState} from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Emailesenha from '../../components/emailsenha/emailesenha.js';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
+import axios from 'axios';
 
-export default function Cadastro() {
-  const handleClick = () => {
+const Cadastro = () => {
+
+  const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(false);
+
+  const navigate = useNavigate();
+  
+
+  async function entrar() {
+    setCarregando(true);
+    setErro('');
+
+  
+
+  try {
+    const response = await axios.post('http://localhost:5000/cadastro');
+
+    if( response.status === 204 ) {
+      navigate('/');
+    }
+  } catch (err) {
+    if(err.response) {
+      setErro(err.response.data.erro)
+    } else {
+      setErro(err.erro.erro)
+    }
     
-    alert('Botão "Finalizar" clicado!');
-  };
-
+  }
+}
   return (
 <article className='cont-cadastro'>
     <Cabecalho/>
@@ -28,16 +52,20 @@ export default function Cadastro() {
           <button className='pessoafisica'>PESSOA FÍSICA</button>
           <h1 className='h1'>*CAMPO OBRIGATÓRIO </h1>
         </div>
+        <p>{erro}</p>
+         
 
         <Cadastrocliente />
         <Emailesenha />
 
-        <button className='finalizar' onClick={handleClick}>Finalizar</button>
+        <button onClick={entrar}>Finalizar</button>
+        
       </div>
       </article>
     </header>
     </article>
   );
+
 }
 
-
+export default Cadastro;

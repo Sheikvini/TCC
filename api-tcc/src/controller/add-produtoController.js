@@ -8,8 +8,7 @@ endpoint.post('/inserir', async (req, resp) => {
     try {
         const produto = await req.body;
 
-        //inserir as validaçoes abaixo
-
+    
         if(!produto.produto)
             throw new Error('⚠ Nome obrigatório')
 

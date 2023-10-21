@@ -3,31 +3,20 @@ import './emailesenha.scss';
 
 
 export default function Emailesenha() {
-  const [info12, setInfo12] = useState('');
-  const [info13, setInfo13] = useState('');
+  const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState('');
 
-  const handleInfo12Change = (event) => {
-    setInfo12(event.target.value);
-  };
-
-  const handleInfo13Change = (event) => {
-    setInfo13(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
 
   return (
     <div className='caixinha2'>
-      <form onSubmit={handleSubmit}>
+      
 
         <div className='email'>
         <input 
           type="email"
           placeholder="*Email"
-          value={info12}
-          onChange={handleInfo12Change}
+          value={email}
+          onChange={e => setEmail (e.target.value)}
 
         />
 <button >
@@ -45,8 +34,8 @@ export default function Emailesenha() {
         <input 
           type="password"
           placeholder="*Senha"
-          value={info13}
-          onChange={handleInfo13Change}
+          value={senha}
+          onChange={e => setSenha (e.target.value)}
         />
 <button >
           <img
@@ -58,7 +47,7 @@ export default function Emailesenha() {
           />
         </button>
 </div>
-      </form>
+      
     </div>
   );
 }

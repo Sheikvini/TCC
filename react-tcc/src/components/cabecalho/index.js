@@ -56,8 +56,8 @@ const Header = ({ onSearch }) => {
       <section className='sub-menu'>
         <a className='h' href='/'>Home</a>
         <a className='p' href='/login'>login</a>
-        <a className='sp'>Selecione um Produto</a>
-        <a className='sn' href='/sobrenos'>Sobre nós</a>
+        <a className='sp' href='/sobrenos'>Sobre nós</a>
+        <a className='sn' href='/termosdeuso'>Termos de Uso,0 </a>
       </section>
 
     </header>

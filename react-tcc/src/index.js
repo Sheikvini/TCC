@@ -24,7 +24,10 @@ import P_realizados from './pages/pedidos-realizados';
 import Termosdeuso from './pages/termosdeuso';
 import Sobrenos from './pages/sobrenos';
 import Novatinta from './pages/novatinta';
-
+import Financa from './pages/financas';
+import Financa_mes from './pages/financas_mes';
+import Financas_estados from './pages/financas_estados';
+import Rastreio from './pages/rastreio';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -53,7 +56,10 @@ root.render(
       <Route path='/termosdeuso' element={<Termosdeuso />} />
       <Route path='/sobrenos' element={<Sobrenos />} />
       <Route path='/novatinta' element={<Novatinta />} />
-      
+      <Route path='/financas' element={<Financa/>} />
+      <Route path='/financas_mes' element={<Financa_mes/>} />
+      <Route path='/financas_estado' element={<Financas_estados/>} />
+      <Route path='/rastreio' element={<Rastreio/>} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

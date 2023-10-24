@@ -2,14 +2,14 @@
     display: flex;
     position: relative;
     flex-direction: start;
-    top: 70px;
-    right: 155px;
+    top: 90px;
+    right: 345px;
     font-size: 60px;
     max-width: 900px;
     justify-content: center;
     font-family: 'Architects Daughter', cursive;
-    
-    
+
+
 }
 
 .h5-tu {
@@ -17,8 +17,8 @@
     justify-content: flex-end;
     position: relative; 
     flex-direction: start;
-    bottom: 10px;
-    right: 130px;
+    bottom: 30px;
+    right: 160px;
     font-size: 30px;
     color: #2B75CB;
     max-width: 800px;
@@ -33,11 +33,11 @@
 
 
 
-p{
+.a{
     font-size: 17px;
     width: 1000px;
     right: 100px;
-    font-family: 'Quicksand', cursive;
+    font-family: 'Denk one', cursive;
  
 }
 }
@@ -48,4 +48,23 @@ p{
    align-items: center;
    margin-top: -20px;
 }
-    
+
+
+
+
+.texto2-tu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+ 
+     p{
+         font-size: 21px;
+         width: 1000px;
+         right: 100px;
+         font-family: 'Quicksand', cursive;
+
+     }
+ 
+ }

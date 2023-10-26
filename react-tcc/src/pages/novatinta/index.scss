@@ -1,0 +1,77 @@
+.global-nt {
+
+
+    .contt-nt {
+        display: flex;
+        margin-left: 60px;
+        align-items: center;
+       flex-direction: column;
+      padding: 50px;
+       
+
+        
+
+
+    
+
+
+    button{
+        margin-right: 200px;
+    }
+
+    .cadastrar-nt {
+        border: 2px solid rgb(226, 226, 226);
+        background-color: rgb(226, 226, 226);
+        color: rgb(116, 116, 116);
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 8px 7px rgba(0, 0, 0, 0.1);
+        width: 180px;
+        cursor: pointer;
+        transition: background-color 0.6s ease, transform 0.6s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 46px;
+        position: relative;
+        margin: 30px;
+    }
+
+    .cadastrar-nt:hover {
+        background-color: #2B75CB;
+        transform: scale(1.05);
+        color: rgb(255, 255, 255);
+    }
+
+
+    input {
+        width: 250px;
+        height: 20px;
+        
+    }
+
+    .arquivo-nt {
+        width: 120px;
+        height: 30px;
+    }
+
+    h3 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        
+    }
+
+    p {
+        text-align: left;
+       margin-left: 240px;
+        align-items: center;
+        margin-inline: -100;
+        
+
+       
+
+    }
+}
+}
+

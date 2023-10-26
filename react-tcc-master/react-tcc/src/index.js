@@ -29,6 +29,7 @@ import Financa_mes from './pages/financas_mes';
 import Financas_estados from './pages/financas_estados';
 import Rastreio from './pages/rastreio';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

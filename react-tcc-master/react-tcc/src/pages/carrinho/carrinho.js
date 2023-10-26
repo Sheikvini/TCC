@@ -45,7 +45,7 @@ return(
 
             </section> 
             <footer className="rod-carrinho">
-                <Rodape/>
+                
             </footer>
      </header>
  )

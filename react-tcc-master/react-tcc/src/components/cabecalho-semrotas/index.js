@@ -35,9 +35,13 @@ const Header = ({ onSearch }) => {
             <img></img>
         </button>
 
-        <button>
-            <img src="/assets/img/icon/icon-cab.png"></img>
-        </button>
+        <Link to='/carrinho'>
+            <img className='C' src="/assets/img/icon/imagecarrinho.png"></img>
+        </Link>
+        <Link to='/'>
+            <img className='M' src="/assets/img/icon/imageadm.png"></img>
+        </Link>
+
        </div>
       </section>
 

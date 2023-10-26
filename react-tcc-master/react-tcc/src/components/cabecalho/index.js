@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import "./index.scss"
 import { Link } from 'react-router-dom';
+
+
+
 const Header = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
-
+  
   const handleInputChange = (event) => {
     setSearchValue(event.target.value);
   };
@@ -40,9 +43,13 @@ const Header = ({ onSearch }) => {
             <img></img>
         </button>
 
-        <button>
-            <img src="/assets/img/icon/icon-cab.png"></img>
-        </button>
+        <Link to='/carrinho'>
+            <img className='C' src="/assets/img/icon/imagecarrinho.png"></img>
+        </Link>
+        <Link to='/'>
+            <img className='M' src="/assets/img/icon/imageadm.png"></img>
+        </Link>
+       
        </div>
       </section>
 
@@ -57,7 +64,7 @@ const Header = ({ onSearch }) => {
         <a className='h' href='/'>Home</a>
         <a className='p' href='/login'>login</a>
         <a className='sp' href='/sobrenos'>Sobre nós</a>
-        <a className='sn' href='/termosdeuso'>Termos de Uso,0 </a>
+        <a className='sn' href='/termosdeuso'>Termos de Uso </a>
       </section>
 
     </header>

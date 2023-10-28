@@ -20,7 +20,6 @@ import Card from './components/card';
 import Congratulations from './pages/jogo/congratulations';
 import Carrinho from './pages/carrinho/carrinho';
 import Telaadm from './pages/telaadm';
-import P_realizados from './pages/pedidos-realizados';
 import Termosdeuso from './pages/termosdeuso';
 import Sobrenos from './pages/sobrenos';
 import Novatinta from './pages/novatinta';
@@ -52,7 +51,6 @@ root.render(
       <Route path='/congratulations' element={<Congratulations />} />
       <Route path='/carrinho' element={<Carrinho />} />
       <Route path='/adm' element={<Telaadm />} />
-      <Route path='/pedidos-realizados' element={<P_realizados/>} />
       <Route path='/termosdeuso' element={<Termosdeuso />} />
       <Route path='/sobrenos' element={<Sobrenos />} />
       <Route path='/novatinta' element={<Novatinta />} />

@@ -15,12 +15,12 @@ return(
                         <button className="C">Carrinho</button>
                     </Link>
                         
-                    <Link className='link_mp' to={'/pedidos-realizados'}>
-                            <button className="MP" >Meus Pedidos</button>
+                    <Link className='link_mp' to={'/rastreio'}>
+                            <button className="MP" >Rastrear</button>
                     </Link>
                     
-                    <Link className='link_R' to={'/rastreio'}>
-                        <button className="R">Rastrear</button>
+                    <Link className='link_R' to={'/sobrenos'}>
+                        <button className="R">Sobre nós</button>
                     </Link>
 
                     <Link className='link_TU' to={'/termosuso'}>

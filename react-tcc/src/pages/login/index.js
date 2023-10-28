@@ -29,10 +29,13 @@ const Login = () => {
       if( response.status === 204 ) {
         navigate('/');
       }
-    } catch (err) {
+    } 
+    catch (err) {
+      
       if(err.response) {
         setErro(err.response.data.erro)
-      } else {
+      } 
+      else {
         setErro(err.erro.erro)
       }
       
@@ -87,19 +90,12 @@ const Login = () => {
                         />
                     </div>
 
-                    <a className='esq-senha'>
-                        Esqueci minha senha
-                    </a>   
+                    
                      <button onClick={entrar}>Entrar</button>
-                     <p>{erro}</p>
+                    <p className='er'>{erro}</p>
                 </span>
-
                 
-                <div className='req-senha'>
-                    <p>Requisitos para senha:</p>
-                    <li>Pelo menos uma leta maiúscula</li>
-                    <li>Mínino de 8 caracteres</li>
-                </div>
+      
 
                 <div className='n-conta'>
                     <p>Não possuí uma conta?</p>

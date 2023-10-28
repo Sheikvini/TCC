@@ -1,13 +1,26 @@
 import './index.scss';
-import Cadastrocliente from '../../components/cadastro/cadastrocliente.js';
+
 import React, {useContext, useState} from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import Emailesenha from '../../components/emailsenha/emailesenha.js';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 import axios from 'axios';
 
 const Cadastro = () => {
 
+  const [nome, setNome] = useState('');
+  const [sex, setSex] = useState('');
+  const [nascimento, setNasciemento] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [tipo_endereco, setTipo_endereco] = useState('');
+  const [cep, setCep] = useState('');
+  const [numero_complemento, setNumero_complemento] = useState('');
+  const [rua, setRua] = useState('');
+  const [bairro, setBairro] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [estado, setEstado] = useState('');
+  const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
 
@@ -18,10 +31,25 @@ const Cadastro = () => {
     setCarregando(true);
     setErro('');
 
-  
+  let dados = {
+    nome: nome,
+    sex: sex,
+    nascimento: nascimento,
+    cpf: cpf,
+    telefone: telefone,
+    tipo_endereco: tipo_endereco,
+    cep: cep,
+    numero_complemento: numero_complemento,
+    rua: rua,
+    bairro: bairro,
+    cidade: cidade,
+    estado: estado,
+    email: email,
+    senha: senha,
+  }
 
   try {
-    const response = await axios.post('http://localhost:5000/cadastro');
+    const response = await axios.post('http://localhost:5000/cadastro', dados);
 
     if( response.status === 204 ) {
       navigate('/');
@@ -55,10 +83,300 @@ const Cadastro = () => {
       
          <p>{erro}</p>
 
-        <Cadastrocliente />
-        <Emailesenha />
+         <div className='caixinha'>        
+        
+        
+        <section>
+          <div className='nome'>
+        
+            <span>   
+              <input
+                type="text"
+                placeholder="*Nome completo"
+                value={nome}
+                onChange={e => setNome(e.target.value)}
+              
+              />
+
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+
+                />
+              </button>
+            </span>  
+          </div> 
+          
+          <div className='sexo'>
+            <span>
+              <input
+                type="text"
+                placeholder="*Sexo"
+                value={sex}
+                onChange={e => setSex(e.target.value)}
+              />
+          
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+
+                />
+              </button>
+            </span>  
+          </div> 
+        </section>
+        <section>  
+          <div className='datadenascimento'>
+              <span>  
+                <input  className='Datadenascimento'
+                  type="date" 
+                  placeholder="*Data de nascimento"
+                  value={nascimento}
+                  onChange={e => setNasciemento(e.target.value)}
+                />
+              </span>  
+          </div> 
+
+          <div className='cpf1'>
+            <span>
+              <input
+                type="text"
+                placeholder="*CPF"
+                value={cpf}
+                onChange={e => setCpf (e.target.value)}
+              />
+              
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+
+                  />
+              </button>
+            </span>    
+          </div>
+        </section>
+
+        <section>
+          <div className='telefone1'>
+            <span>
+              <input 
+                type="text"
+                placeholder="*Seu telefone"
+                value={telefone}
+                onChange={e => setTelefone (e.target.value)}
+              />
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+
+                />
+              </button>
+            </span>
+          </div>
+
+          <div className='tpendereco'>
+            <span>
+              <input
+                type="text"
+                placeholder="*Tipo de endereço"
+                value={tipo_endereco}
+                onChange={e => setTipo_endereco (e.target.value)}
+              />
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+
+                />
+              </button>
+            </span>  
+          </div>
+        </section>  
+
+        <section>
+          <div className='cep1'>
+            <span>  
+              <input 
+                type="text"
+                placeholder="*CEP"
+                value={cep}
+                onChange={e => setCep (e.target.value)}
+              />
+            
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+                />
+                </button>
+              </span>
+          </div>
+
+          <div className='neomplemento'>
+            <span>
+              <input 
+                type="text"
+                placeholder="*N° e complemento"
+                value={numero_complemento}
+                onChange={e => setNumero_complemento (e.target.value)}
+              />
+              <button >
+                <img
+                  src= 'assets/img/icon/alterar_icone.png'
+                  alt="Alterar"
+                  width="10"
+                  height="10"
+                />
+              </button>
+            </span> 
+          </div>
+        </section>
+      <section>
+        <div className='nomerua'>
+        
+          <span>  
+            <input 
+              type="text"
+              placeholder="*Nome da rua"
+              value={rua}
+              onChange={e => setRua (e.target.value)}
+            />
+            <button >
+              <img
+                src= 'assets/img/icon/alterar_icone.png'
+                alt="Alterar"
+                width="10"
+                height="10"
+              />
+            </button>
+          </span>
+        
+        </div>
+      
+        <div className='bairro'>
+      
+          <span>    
+            <input 
+              type="text"
+              placeholder="*Bairro"
+              value={bairro}
+              onChange={e=> setBairro(e.target.value)}
+            />
+            <button >
+              <img
+                src= 'assets/img/icon/alterar_icone.png'
+                alt="Alterar"
+                width="10"
+                height="10"
+              />
+            </button>
+          </span>
+        </div>
+      </section>
+
+      <section>
+        <div className='cidade'>
+      
+          <span>    
+            <input 
+              type="text"
+              placeholder="*Cidade"
+              value={cidade}
+              onChange={e => setCidade (e.target.value)}
+            />
+            <button >
+              <img
+                src= 'assets/img/icon/alterar_icone.png'
+                alt="Alterar"
+                width="10"
+                height="10"
+              />
+            </button>
+          </span>
+        </div>
+      
+        <div className='estado'>
+      
+          <span>    
+            <input 
+              type="text"
+              placeholder="*Estado"
+              value={estado}
+              onChange={e => setEstado (e.target.value)}
+            />
+            <button >
+              <img
+                src= 'assets/img/icon/alterar_icone.png'
+                alt="Alterar"
+                width="10"
+                height="10"
+              />
+            </button>
+          </span>
+        </div>
+      </section>
+
+     
+    </div>
     
-        <button onClick={entrar}>Finalizar</button>
+    <div className='caixinha2'>
+      
+      <div className='email'>
+      <input 
+        type="email"
+        placeholder="*Email"
+        value={email}
+        onChange={e => setEmail (e.target.value)}
+
+      />
+      <button >
+        <img
+          src= 'assets/img/icon/alterar_icone.png'
+          alt="Alterar"
+          width="10"
+          height="10"
+
+        />
+      </button>
+      </div>
+
+      <div className='senha'>
+      <input 
+        type="password"
+        placeholder="*Senha"
+        value={senha}
+        onChange={e => setSenha (e.target.value)}
+      />
+      <button >
+        <img
+          src= 'assets/img/icon/alterar_icone.png'
+          alt="Alterar"
+          width="10"
+          height="10"
+
+        />
+      </button>
+      </div>
+    
+    </div>
+    
+        <button className='finalizar' onClick={entrar}>Finalizar</button>
         
       </div>
       </article>

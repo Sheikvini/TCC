@@ -1,45 +1,46 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import React, { useContext,useState } from 'react';
 import Cabecalho from '../../components/cabecalho-semrotas'
 import axios from 'axios';
 import { LoginContext } from '../../context';
 const Loginadm = () => {
     
-    const [email, setEmail] = useState('');
+    const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
-    const [message, setMessage] = useState('');
-      // Funções para lidar com a mudança nos inputs
-      const handleChangeInput1 = (e) => {
-        setEmail(e.target.value);
-      };
-    
-      const handleChangeInput2 = (e) => {
-        setSenha(e.target.value);
-        };
-        
+    const [erro, setErro] = useState('');
+    const [carregando, setCarregando] = useState(false);    
 
-        const loginContext = useContext(LoginContext);
+    const navigate = useNavigate();
 
         async function entrar() {
+          setCarregando(true);
+          setErro('');
+
+          let useradm = {
+            usuario: usuario,
+            senha: senha
+          }
+
             try {
-              const response = await axios.post('http://localhost:5000/login', {
-                email,
-                senha,
-              });
+              const response = await axios.post('http://localhost:5000/loginAdm', useradm);
         
-              if (response.status === 200) {
-                loginContext.logar();
-                window.location.href = 'http://localhost:3000/';
-              } else {
-                setMessage('⚠ Login ou senha incorretos');
-              }
-            } catch (error) {
-              console.error('⚠ Erro ao verificar as credenciais:', error);
-              setMessage('⚠ Erro ao verificar as credenciais. Tente novamente mais tarde.');
+              if (response.status === 204) {
+                navigate('/adm');
+            }  
+          } 
+          
+          catch (err) {
+              
+            if(err.response) { 
+              setErro(err.response.data.erro);
+            }
+
+            else {
+              setErro(err.erro.erro)
             }
           }
-    
+        }
 
     return(
         <article className='cont-cadastro'>
@@ -59,15 +60,15 @@ const Loginadm = () => {
                 </div>
 
                 <span>
-                    <h4 className='email-adm'>Email:</h4>
+                    <h4 className='email-adm'>Usuário:</h4>
                     
                     <div className="caixa-text-adm">
                         
                         <input
-                            placeholder="Insira seu email aqui..."
+                            placeholder="Insira seu usuário aqui..."
                             type="text"
-                            value={email}
-                            onChange={handleChangeInput1}
+                            value={usuario}
+                            onChange={e => setUsuario(e.target.value)}
                         />
                             
                     </div>  
@@ -80,15 +81,12 @@ const Loginadm = () => {
                             placeholder="Digite sua senha"
                             type="password"
                             value={senha}
-                            onChange={handleChangeInput2}
+                            onChange={e => setSenha(e.target.value)}
                         />
                     </div>
-
-                    <a className='esq-senha-adm'>
-                        Esqueci minha senha
-                    </a>    
+      
                     <button onClick={entrar}>Entrar</button>
-                     <p>{message}</p>
+                     <p>{erro}</p>
                 </span>
 
 
@@ -97,6 +95,7 @@ const Loginadm = () => {
         </header>
         </article>
     );
+  
 }
 
 export default Loginadm;

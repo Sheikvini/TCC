@@ -36,7 +36,7 @@ function Easy() {
 
   useEffect(() => {
     if (pares.length === imagens.length / 2) {
-      window.location.href = 'http://localhost:3000/congratulations';
+      window.location.href = 'http://http://129.148.42.252:3032:3000/congratulations';
     }
   }, [pares, imagens.length]);
 

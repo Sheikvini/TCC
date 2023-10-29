@@ -23,7 +23,7 @@ const Loginadm = () => {
           }
 
             try {
-              const response = await axios.post('http://localhost:5000/loginAdm', useradm);
+              const response = await axios.post('http://129.148.42.252:5032/loginAdm', useradm);
         
               if (response.status === 204) {
                 navigate('/adm');

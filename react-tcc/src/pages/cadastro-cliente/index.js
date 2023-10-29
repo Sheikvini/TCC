@@ -49,7 +49,7 @@ const Cadastro = () => {
   }
 
   try {
-    const response = await axios.post('http://localhost:5000/cadastro', dados);
+    const response = await axios.post('http://129.148.42.252:5032/cadastro', dados);
 
     if( response.status === 204 ) {
       navigate('/');

@@ -341,7 +341,7 @@ const Cadastro = () => {
       <div className='email'>
       <input 
         type="email"
-        placeholder="*Email"
+        placeholder="*Usuário"
         value={email}
         onChange={e => setEmail (e.target.value)}
 

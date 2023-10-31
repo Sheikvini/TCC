@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import Card from '../../../components/card';
 import { Link } from 'react-router-dom';
+import { url } from '../../../apiURL';
 
 function Normal() {
   const imagens = [
@@ -36,7 +37,7 @@ function Normal() {
 
   useEffect(() => {
     if (pares.length === imagens.length / 2 ) {
-      window.location.href = 'http://http://129.148.42.252:3032:3000/congratulations';
+      window.location.href = url + '/congratulations';
     }
   }, [pares, imagens.length]);
 

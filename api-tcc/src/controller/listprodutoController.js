@@ -18,8 +18,11 @@ endpoints.delete('/deletar-produto/:id', async (req, resp) => {
   });
 
   endpoints.get('/produto', async (req, resp) => {
+    
+
 
     let resposta = await listarProdutos()
+
     resp.send(resposta);
   });
 

@@ -65,13 +65,13 @@ const Login = () => {
                 </div>
 
                 <span>
-                    <h4> Email:</h4>
+                    <h4> Usuário:</h4>
                     
                     <div className="caixa-text">
                         
                         <input
                            
-                           placeholder="Insira seu email aqui..."
+                           placeholder="Insira seu usuário aqui..."
                            type="text"
                            value={email}
                            onChange={e => setEmail(e.target.value)}

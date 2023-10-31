@@ -4,6 +4,7 @@ import React, {useContext, useState} from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 import axios from 'axios';
+import { url } from '../../apiURL';
 
 const Cadastro = () => {
 
@@ -49,7 +50,7 @@ const Cadastro = () => {
   }
 
   try {
-    const response = await axios.post('http://129.148.42.252:5032/cadastro', dados);
+    const response = await axios.post(url + '/cadastro', dados);
 
     if( response.status === 204 ) {
       navigate('/');

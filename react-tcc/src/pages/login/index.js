@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react';
 import Cabecalho from '../../components/cabecalho-semrotas'
 import axios from 'axios';
 import { LoginContext } from '../../context';
+import { url } from '../../apiURL';
 const Login = () => {
     
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ const Login = () => {
   }
 
     try {
-      const response = await axios.post('http://129.148.42.252:5032/login', user);
+      const response = await axios.post(url + '/login', user);
 
       if( response.status === 204 ) {
         navigate('/');

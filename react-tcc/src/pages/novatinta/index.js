@@ -15,51 +15,13 @@ export default function Novatinta() {
   const [info9, setInfo9] = useState('');
   const [info10, setInfo10] = useState('');
 
-  const handleInfo1Change = (event) => {
-    setInfo1(event.target.value);
-  };
+  function escolherimagem() {
+    document.getElementById('bt-envio').click();
+  }
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
-  const handleInfo2Change = (event) => {
-    setInfo2(event.target.value);
-  };
-
-  const handleInfo3Change = (event) => {
-    setInfo3(event.target.value);
-  };
-
-  const handleInfo4Change = (event) => {
-    setInfo4(event.target.value);
-  };
-
-  const handleInfo5Change = (event) => {
-    setInfo5(event.target.value);
-  };
-
-  const handleInfo6Change = (event) => {
-    setInfo6(event.target.value);
-  };
-
-  const handleInfo7Change = (event) => {
-    setInfo7(event.target.value);
-  };
-
-  const handleInfo8Change = (event) => {
-    setInfo8(event.target.value);
-  };
-
-  const handleInfo9Change = (event) => {
-    setInfo9(event.target.value);
-  };
-
-  const handleInfo10Change = (event) => {
-    setInfo10(event.target.value);
-  };
-
-
+  function mostrarImagem() {
+    return URL.createObjectURL(info1);
+  }
 
   return (
 
@@ -71,74 +33,84 @@ export default function Novatinta() {
       <h3>Novo Produto</h3>
 
       <p>Imagem do produto:</p>
-        <input className="arquivo-nt"
-          type="file"
-          value={info1}
-          onChange={handleFileChange}
-        />
+
+      <div className="capa-prod" onClick={escolherimagem}>
+       
+       {!info1 &&
+        <img src="../assets/img/icon/upload.png"></img>
+      }
+
+      {!info1 &&
+      <img className="imagem-capa" src= {mostrarImagem ()} alt=''/>
+      }
+
+
+        <input className="arquivo-nt" 
+          type="file" id="bt-envio" onChange={e=> setInfo1(e.target.files[0])}/>
+        </div>
 
 
       <p className="aaa">Estoque:</p>
       <input
         type="text"
         value={info2}
-        onChange={handleInfo2Change}
+        onChange={e => setInfo2(e.target.value)}
       />
 
       <p>Cores:</p>
       <input
         type="text"
         value={info3}
-        onChange={handleInfo3Change}
+        onChange={e => setInfo3(e.target.value)}
       />
 
       <p>Nome:</p>
       <input
         type="text"
         value={info4}
-        onChange={handleInfo4Change}
+        onChange={e => setInfo4(e.target.value)}
       />
 
       <p>Tipo:</p>
       <input
         type="text"
         value={info5}
-        onChange={handleInfo5Change}
+        onChange={e => setInfo5(e.target.value)}
       />
 
       <p>Descrição:</p>
       <input
         type="text"
         value={info6}
-        onChange={handleInfo6Change}
+        onChange={e => setInfo6(e.target.value)}
       />
 
       <p> Fabricante:</p>
       <input
         type="text"
         value={info7}
-        onChange={handleInfo7Change}
+        onChange={e => setInfo7(e.target.value)}
       />
 
     <p> Preço:</p>
       <input
         type="text"
         value={info8}
-        onChange={handleInfo8Change}
+        onChange={e => setInfo8(e.target.value)}
       />
 
     <p> Porcentagem de desconto:</p>
       <input
         type="text"
         value={info9}
-        onChange={handleInfo9Change}
+        onChange={e => setInfo9(e.target.value)}
       />
 
     <p> Porcentagem de desconto:</p>
       <input
         type="text"
         value={info10}
-        onChange={handleInfo10Change}
+        onChange={e => setInfo10(e.target.value)}
       />
 
       <button className="cadastrar-nt"> Cadastrar </button>

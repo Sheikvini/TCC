@@ -37,7 +37,7 @@ function Hard() {
 
   useEffect(() => {
     if (pares.length === imagens.length / 2) {
-      window.location.href = url + '/congratulations';
+      window.location.href ='/congratulations';
     }
   }, [pares, imagens.length]);
 

@@ -1,8 +1,25 @@
 import Cabecalho from "../../components/cabecalho"
 import "./index.scss"
 import Rodape from "../../components/rodape"
-export default function Espacografite() {
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { url } from "../../apiURL"
 
+export default function Grafite() {
+    const [produtos, setProdutos] = useState([])
+
+    async function listarProdutos(){
+        const resp = await axios.get( url + '/produto')
+
+        const respFiltrados = resp.data.filter(item => item.nm_categoria === 'Grafite')
+
+        setProdutos(respFiltrados)
+
+    }
+
+    useEffect(() => {
+        listarProdutos()
+    }, [])
     return(
 
         <article>
@@ -12,8 +29,20 @@ export default function Espacografite() {
             
                 <h1>Espaço Grafite</h1>
             <div> 
+
+            {produtos.map(item => {
+                        return(
+                            <div>  
+                                <img src={item.img_produto}></img>
+                                <p>{item.nm_produto}</p>
+                                <p2> {item.vl_promocao ?  `de: R$ ${item.vl_promocao}` : ''} </p2>
+                                <h1>{item.vl_promocao ? 'por: ' : ''}R$ {item.vl_preco} </h1>
+                            </div>
+                        )
+                    })}
+
                 
-                <div>  
+                {/* <div>  
                    <img src="/assets/img/produtos/img1.png"></img>
                    <p>Tinta spray brilho natural Super Color grafite 350ml Tekbond
                     </p>
@@ -90,9 +119,9 @@ export default function Espacografite() {
                    <p2>de: 65,60</p2>
                    <h1>por: 56,99</h1>
                </div>    
+                */}
 
-
-           </div>
+            </div> 
            
             <img src="/assets/img/logo.png"></img>
 

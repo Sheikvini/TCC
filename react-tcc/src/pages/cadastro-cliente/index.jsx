@@ -113,6 +113,15 @@ const Cadastro = () => {
           
           <div className='sexo'>
             <span>
+
+{/* 
+                <select name="" id="">
+                  <option> Sexo</option>
+                  <option value="">Maculino</option>
+                  <option value="">Feminino</option>
+                </select> */}
+
+
               <input
                 type="text"
                 placeholder="*Sexo"

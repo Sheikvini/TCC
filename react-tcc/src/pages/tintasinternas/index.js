@@ -36,8 +36,8 @@ export default function Tintasinternas() {
                             <div>  
                                 <img src={item.img_produto}></img>
                                 <p>{item.nm_produto}</p>
-                                <p2> {item.vl_promocao ?  `de: R$ ${item.vl_promocao}` : ''} </p2>
-                                <h1>{item.vl_promocao ? 'por: ' : ''}R$ {item.vl_preco} </h1>
+                                <p2> {item.vl_preco ?  `de: R$ ${item.vl_preco}` : ''} </p2>
+                                <h1>{item.vl_promocao ? 'por: ' : ''}R$ {item.vl_promocao} </h1>
                             </div>
                         )
                     })}

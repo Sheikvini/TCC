@@ -27,6 +27,7 @@ import Financa from './pages/financas';
 import Financa_mes from './pages/financas_mes';
 import Financas_estados from './pages/financas_estados';
 import Rastreio from './pages/rastreio';
+import Detalhes_produtos from './pages/detalhes-produtos'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -58,6 +59,7 @@ root.render(
       <Route path='/financas_mes' element={<Financa_mes/>} />
       <Route path='/financas_estado' element={<Financas_estados/>} />
       <Route path='/rastreio' element={<Rastreio/>} />
+      <Route path='/detalhes-produtos' element={<Detalhes_produtos/>} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

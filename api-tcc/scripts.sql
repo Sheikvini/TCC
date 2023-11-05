@@ -2,7 +2,9 @@
 create database tcc;
 use tcc;
 
-drop database tcc;
+
+show databases;
+show tables;
 
 create table tb_cliente(
  id_cliente			int primary key auto_increment,
@@ -22,7 +24,7 @@ create table tb_cliente(
  ds_email               varchar(200)
 );
 
-drop table tb_cliente;
+select * from tb_cliente;
 
 create table tb_login (
 id_logi 	       		int primary key auto_increment,
@@ -35,32 +37,42 @@ foreign key (id_cliente) references tb_cliente(id_cliente)
 insert into tb_login (ds_email, ds_senha)
 values ('teste@gmail.com' , '1234');
 
-drop table tb_login;
-
 select * from tb_login;
 
-select * from tb_cliente;
+
+create table tb_loginAdm (
+id_loginAdm 	       	int primary key auto_increment,
+ds_usuario              varchar(200),
+ds_senha                varchar(200)
+);
+
+select * from tb_loginAdm;
+
+insert into tb_loginAdm (ds_usuario, ds_senha)
+values ('@admin' , '@dminbr');
 
 create table tb_produto(
     id_produto                  int primary key auto_increment,
-    id_produto_imagem	        integer,
-    id_cor	        			integer,
+    img_produto                 varchar(200),
     nm_produto                  varchar(200),
     vl_preco                    dec(5,2),
-    vl_promocao					varchar(200),
-    qtd_estoque		      		int,
-    ds_descricao				varchar(200),
+    vl_promocao                 varchar(200),
+    qtd_estoque                 int,
+    ds_descricao                varchar(200),
     ds_tipo                     varchar(100),
     bt_disponivel               bool,
     ds_fabricante               varchar(200),
-    ds_recomendaçao             varchar(200),
+    ds_recomendacao             varchar(200),
     ds_validade                 date,
-    nm_categoria	       		varchar(200),
-    foreign key (id_produto_imagem) references tb_produto_imagem (id_produto_imagem),
-    foreign key (id_cor) references tb_cor (id_cor)
+    nm_categoria                varchar(200)
 );
 
 select * from tb_produto;
+
+select * from tb_produto;
+insert INTO tb_produto    (img_produto, nm_produto, vl_preco, vl_promocao, qtd_estoque, ds_descricao, ds_tipo, bt_disponivel, ds_fabricante, ds_recomendacao, ds_validade, nm_categoria)
+values ('/assets/img/produtos/tinta1.png', 'Tinta Pva Acrílica Interna Coralar Branco 3.6 litros - Coral', 63.90, '57.90', '32', 'Tinta acrílica Coral recomendada para ambientes internos, 3.6L branco', 'tinta Acrílica', true,
+ 'Coral', 'Para ambiente internos', '2024-02-03', 'Internas');
 
 create table tb_endereco(
  id_endereco			int primary key auto_increment,
@@ -75,12 +87,17 @@ create table tb_endereco(
 
 select * from tb_endereco;
 
-create table tb_produto_imagem(
-id_produto_imagem		int primary key auto_increment,
-img_produto				varchar(100)
+
+create table tb_cartao(
+id_cartao				int primary key auto_increment,
+ds_ncartao				varchar(200),
+dt_vencimentocartao		date,
+ds_cvc					varchar(200),
+ds_fromadepagamento 	 ENUM ('Débito', 'Crédito') NOT NULL,
+qtd_parcelas 			int
 );
 
-select * from tb_produto_imagem;
+select * from tb_cartao;
 
 create table tb_pedido(
 id_pedido				int primary key auto_increment,
@@ -95,8 +112,6 @@ foreign key (id_cartao) references tb_cartao (id_cartao),
 foreign key (id_endereco) references tb_endereco (id_endereco)
 );
 
-drop table  tb_pedido; 
-
 select * from tb_pedido;
 
 
@@ -108,28 +123,12 @@ qtd_item              int,
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
-drop table tb_produto_item;
 
 select * from tb_produto_item;
 
-create table tb_cor(
-id_cor                    int primary key auto_increment,
-nm_cor                    varchar(200),
-bt_disponivel	          bool
-);
 
-select * from tb_cor;
 
-create table tb_cartao(
-id_cartao				int primary key auto_increment,
-ds_ncartao				varchar(200),
-dt_vencimentocartao		date,
-ds_cvc					varchar(200),
-ds_fromadepagamento 	 ENUM ('Débito', 'Crédito') NOT NULL,
-qtd_parcelas 			int
-);
 
-select * from tb_cartao;
 
 
 Select id_produto id,

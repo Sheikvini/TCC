@@ -31,8 +31,8 @@ export default function Financas() {
         </div>
 
     <div className="mapacalor">
-    <h2 className="relatorio">Relatório Mensal</h2>
-    <img src="assets/img/financa.png" alt="" />
+    <h2 className="relatorio">Relatório Despesas e lucros</h2>
+    <img src="assets/img/financas.png" alt="" />
     </div>
 
     </div>

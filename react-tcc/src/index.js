@@ -57,7 +57,7 @@ root.render(
       <Route path='/novatinta' element={<Novatinta />} />
       <Route path='/financas' element={<Financa/>} />
       <Route path='/financas_mes' element={<Financa_mes/>} />
-      <Route path='/financas_estado' element={<Financas_estados/>} />
+      <Route path='/financas_estados' element={<Financas_estados/>} />
       <Route path='/rastreio' element={<Rastreio/>} />
       <Route path='/detalhes-produtos' element={<Detalhes_produtos/>} />
     </Routes>

@@ -14,6 +14,25 @@
         
   }
   
+  .sexo{
+
+    display: flex;
+    position: relative;
+    right: 10px;
+    align-items: center;
+    width: 380px;
+    border-radius: 20px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    border-color: #2B75CB;
+  }
+
+  .nome{
+    position: relative;
+    left: 10px;
+  }
   .princ-cadastro{
     display: flex;
     flex-direction: row;

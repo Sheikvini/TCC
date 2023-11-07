@@ -8,6 +8,15 @@ export async function listarProdutos(produto){
     return resposta;
 }
 
+export async function  buscarProduto(nomeProduto){
+  const comando = `select * from tb_produto
+                      where nm_produto like ? `
+
+  const [resp] = await conexao.query(comando, [`%${nomeProduto}%`])
+
+  return resp
+}
+
 
 export async function deletarProduto(id){
     const comando = 'delete * from tb_produto where id = ?';

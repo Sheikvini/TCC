@@ -8,6 +8,15 @@ export async function listarProdutos(produto){
     return resposta;
 }
 
+export async function  buscarProduto(nomeProduto){
+  const comando = `select * from tb_produto
+                      where nm_produto like ? `
+
+  const [resp] = await conexao.query(comando, [`%${nomeProduto}%`])
+
+  return resp
+}
+
 
 export async function deletarProduto(id){
     const comando = 'delete * from tb_produto where id = ?';
@@ -16,6 +25,23 @@ export async function deletarProduto(id){
 
     return resposta;
 }
+
+
+export async function enviarImagem(id,info1){
+  const formData = new formData();
+  formData.append ('capa', info1);
+
+  const [resposta] = await api.put('/filme/${id}/capa',formData, {
+    Headers: {
+
+      "content-type": "multipart/form-data"
+    },
+ });
+
+  return resposta;
+}
+
+
 
 export async function alterarProduto(id,produto){
 

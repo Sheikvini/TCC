@@ -113,22 +113,19 @@ const Cadastro = () => {
           
           <div className='sexo'>
             <span>
-              <input
-                type="text"
-                placeholder="*Sexo"
-                value={sex}
-                onChange={e => setSex(e.target.value)}
-              />
-          
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
 
-                />
-              </button>
+                <select className='sexo'
+                name="" 
+                id=""
+                value={sex}
+                onChange={e=> setSex(e.target.value)}>
+                
+                  <option> Sexo</option>
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                  <option>Prefiro não informar</option>
+                </select> 
+
             </span>  
           </div> 
         </section>
@@ -147,7 +144,7 @@ const Cadastro = () => {
           <div className='cpf1'>
             <span>
               <input
-                type="text"
+                type="number"
                 placeholder="*CPF"
                 value={cpf}
                 onChange={e => setCpf (e.target.value)}
@@ -170,7 +167,7 @@ const Cadastro = () => {
           <div className='telefone1'>
             <span>
               <input 
-                type="text"
+                type= 'Number'
                 placeholder="*Seu telefone"
                 value={telefone}
                 onChange={e => setTelefone (e.target.value)}
@@ -189,21 +186,18 @@ const Cadastro = () => {
 
           <div className='tpendereco'>
             <span>
-              <input
-                type="text"
-                placeholder="*Tipo de endereço"
+            <select className='sexo'
+                name="" 
+                id=""
                 value={tipo_endereco}
-                onChange={e => setTipo_endereco (e.target.value)}
-              />
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-
-                />
-              </button>
+                onChange={e=> setTipo_endereco(e.target.value)}>
+                
+                  <option>Tipo de endereço</option>
+                  <option>Residencial</option>
+                  <option>Comercial</option>
+                  
+                </select> 
+            
             </span>  
           </div>
         </section>  

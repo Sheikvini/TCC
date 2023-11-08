@@ -29,7 +29,7 @@ export default function Financas() {
 
     <div className="mapacalor">
     <h2 className="relatorio">Relatório Mensal</h2>
-    <img src="../assets/img/financa.png" alt="" />
+    <img src="assets/img/financa.png" alt="" />
     </div>
 
     </div>

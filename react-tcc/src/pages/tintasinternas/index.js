@@ -4,6 +4,7 @@ import Rodape from "../../components/rodape"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { url } from "../../apiURL"
+import { Link } from "react-router-dom"
 
 export default function Tintasinternas() {
     const [produtos, setProdutos] = useState([])
@@ -32,12 +33,14 @@ export default function Tintasinternas() {
 
                 <div>
                     {produtos.map(item => {
-                        return(
-                            <div>  
+                        return(        
+                            <div>            
+                                <Link className="link-delt" to={`/detalhes-produtos/${item.id_produto}`} >  
                                 <img src={item.img_produto}></img>
                                 <p>{item.nm_produto}</p>
-                                <p2> {item.vl_preco ?  `de: R$ ${item.vl_preco}` : ''} </p2>
-                                <h1>{item.vl_promocao ? 'por: ' : ''}R$ {item.vl_promocao} </h1>
+                                <p2> {item.vl_promocao ?  `de: R$ ${item.vl_promocao}` : ''} </p2>
+                                <h1>{item.vl_promocao ? 'por: ' : ''}R$ {item.vl_preco} </h1>
+                                </Link>
                             </div>
                         )
                     })}

@@ -3,23 +3,18 @@ import "./index.scss"
 import { Link } from 'react-router-dom';
 
 
+const Cabecalho = () => {
+    
+  const [pesquisa, setPesquisa] = useState('');
 
-const Header = ({ onSearch }) => {
-  const [searchValue, setSearchValue] = useState('');
-  
-  const handleInputChange = (event) => {
-    setSearchValue(event.target.value);
-  };
 
-  const handleSearch = () => {
-    onSearch(searchValue);
-  };
+   async function Pesquisa () {
 
-  const [ValorSelecionado, setValorSelecionado] = useState('');
-  const handleSelecaoChange = (event) =>
-    {
-      setValorSelecionado(event.target.value);
-    };
+    let url = `http://localhost:5032/produto/pesquisa/:pesquisa`
+
+    
+
+  } 
 
   return (
     <header className="principal">
@@ -32,10 +27,10 @@ const Header = ({ onSearch }) => {
           <input
             type="text"
             placeholder="Pesquise Aqui..."
-            value={searchValue}
-            onChange={handleInputChange}
+            value={pesquisa}
+            onChange={e => setPesquisa(e.target.value)}
             />
-          <button onClick={handleSearch}></button>
+          <button ></button>
         </div>
 
        <div>
@@ -72,4 +67,4 @@ const Header = ({ onSearch }) => {
 }
 
 
-export default Header;
+export default Cabecalho;

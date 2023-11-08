@@ -17,30 +17,30 @@ export default function telaadm(){
                     </div>
 
                 </div>
-<header className="tdpalavra">
+        <header className="tdpalavra">
 
-                        <Link className="FI" to={'/adm/financas'}>
+                        <Link className="FI" to={'/financas'}>
                             <div >
                                 <img src="./assets/img/icon/imagefinancas.png" height={50} width={50}></img>
                                 <h3>Finanças</h3>
                             </div>
                         </Link>
 
-                        <Link className="CP" to={'/adm/novatinta'}>
+                        <Link className="CP" to={'/novatinta'}>
                             <div>
                                 <img src="./assets/img/icon/imagecr.png" height={50} width={90}></img>
                                 <h4> Criar Produtos</h4>
                             </div>
                         </Link>
 
-                        <Link  className="BD" to={'/adm/pesquisa-produtos'}>
+                        <Link  className="BD" to={'/pesquisa-produtos'}>
                             <div>
                                 <img src="./assets/img/icon/imagelupa.png" height={50} width={50} ></img>
                                 <h5> Buscar Produtos</h5>
                             </div>
                         </Link>
 
-                        <Link className="PR" to={'/adm/compras'}>
+                        <Link className="PR" to={'/compras'}>
                             <div>
                                 <img src="./assets/img/icon/imagerelatorio.png" height={50} width={50} ></img>
                                 <h5>Relatórios de compra</h5>
@@ -48,8 +48,6 @@ export default function telaadm(){
                         </Link>
 
                     </header>
-
-
 
 
                     <Link className="P" to='/login-adm'>

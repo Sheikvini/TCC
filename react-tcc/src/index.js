@@ -28,6 +28,7 @@ import Financa_mes from './pages/financas_mes';
 import Financas_estados from './pages/financas_estados';
 import Rastreio from './pages/rastreio';
 import Detalhes_produtos from './pages/detalhes-produtos'
+import PesquisaProduto from './pages/pesquisa-produto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -57,9 +58,10 @@ root.render(
       <Route path='/novatinta' element={<Novatinta />} />
       <Route path='/financas' element={<Financa/>} />
       <Route path='/financas_mes' element={<Financa_mes/>} />
-      <Route path='/financas_estado' element={<Financas_estados/>} />
+      <Route path='/financas_estados' element={<Financas_estados/>} />
       <Route path='/rastreio' element={<Rastreio/>} />
-      <Route path='/detalhes-produtos' element={<Detalhes_produtos/>} />
+      <Route path='/detalhes-produtos/:id' element={<Detalhes_produtos/>} />
+      <Route path='/pesquisa-produtos' element={<PesquisaProduto/>} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

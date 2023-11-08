@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Cabecalho from "../../components/cabecalho";
 import "./index.scss";
 export default function Financas() {
@@ -11,20 +12,27 @@ export default function Financas() {
 
        <div className="botao">
         
-        <button className="lucro">
-        <h1>Lucros</h1>
-        $364.32M
-        </button>
+        <Link to={'/financas'}>    
+            <button className="lucro">
+            <h1>Lucros</h1>
+            $364.32M
+            </button>
+        </Link>
 
-        <button className="mes">
-        <h1>Venda por mês</h1>
-        Maio
-        </button>
+        <Link to={'/financas_mes'}>    
+            <button className="mes">
+            <h1>Venda por mês</h1>
+            Maio
+            </button>
+        </Link>
+        
+        <Link to={'/financas_estados'}>
+            <button className="estados">
+            <h1>Estados</h1>
+            Minas Gerais
+            </button>
+        </Link>
 
-        <button className="estados">
-        <h1>Estados</h1>
-        Minas Gerais
-        </button>
         </div>
 
     <div className="mapacalor">

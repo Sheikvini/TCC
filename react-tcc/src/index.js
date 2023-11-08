@@ -53,10 +53,10 @@ root.render(
       <Route path='/adm' element={<Telaadm />} />
       <Route path='/termosdeuso' element={<Termosdeuso />} />
       <Route path='/sobrenos' element={<Sobrenos />} />
-      <Route path='/novatinta' element={<Novatinta />} />
-      <Route path='/financas' element={<Financa/>} />
-      <Route path='/financas_mes' element={<Financa_mes/>} />
-      <Route path='/financas_estado' element={<Financas_estados/>} />
+      <Route path='/adm/novatinta' element={<Novatinta />} />
+      <Route path='/adm/financas' element={<Financa/>} />
+      <Route path='/adm/financas_mes' element={<Financa_mes/>} />
+      <Route path='/adm/financas_estados' element={<Financas_estados/>} />
       <Route path='/rastreio' element={<Rastreio/>} />
     </Routes>
   </BrowserRouter>

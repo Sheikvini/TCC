@@ -1,124 +1,89 @@
-    
 .menu-adm{
-    position: relative;
-    
-    .container{
-            background-color: #989898;
-            height: 90vh;
-            width: 30%;
-            margin-top: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../../../public/assets/img/fundo3.png);
+    background-repeat: no-repeat;
+    background-position: cover;
+
+
+    .container-adm{
+        display: flex;
+        align-items: center;
+
+        .pf{
             display: flex;
+            align-items: center;
             justify-content: center;
-            
-        .perfil{
-            height: 60px;
-            position: relative;
-            top: 30px;
-        }
+            margin-top: 20px;
+        } 
+    }
 
-        .NI{
-          position: relative;
-          top: 25px;
-        }
-    
-        .linha1{
-            right: 36%;
-            width: 240px;
-            
-            position: relative;
-        }
-}
         .tdpalavra{
-            left: 190px;
-            position: relative;
-            top: -530px;
-            width: 225px;
-            .F{
-                display: flex;
-                position: relative;
-                font-size: 16px;
-                top: -77px;
-                right: 35px;
-            }
-            .CP{
-                display: flex;
-                position: relative;
-                font-size: 16px;
-                top: -43px;
-                right: 35px;
-            }
-            .BD{
-                display: flex;
-                position: relative;
-                font-size: 16px;
-                top: -15px;
-                right: 35px;
-            }
-            .R{
-                position: relative;
-                display: flex;
-                top: -10px;
-                font-size: 16px;
-                right: 35px;
-            }
-            .P{
-                display: flex;
-                position: relative;
-                top: 9px;
-                font-size: 16px;
-                right: 35px;
-            }
-
-        }
-        .tdimg{
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            max-width: 50%;
+            text-decoration: none;
 
+            div{
+                display: flex;
+                justify-content: center ;
+                height: 80px;
+                align-items: center;
+                border: solid 1px rgb(201, 201, 201);
+                padding: 30px;
+                border-radius: 20px;
+                width: 170px;
+
+            }
+div:hover{
+                border-color: #2B75CB;
+                transform: scale(1.05);
+            }
 
             .FI{
-                left: 60px;
-                top: -850px;
-                position: relative;
-            }
-            .CPP{
-                position: relative;
-                top: -820px;
-                left: 40px;
-            }
-            .BDD{
-                position: relative;
-                top: -795px;
-                left: 60px;
-            }
-            .RE{
-                position: relative;
-                top: -785px;
-                left: 63px;
-            }
-            .PA{
-                position: relative;
-                top: -760px;
-                left: 65px;
-            }
-        }
+                text-decoration: none;
+                color: black;
 
-        .linha-baixo{
-        width: 240px;
-        top: -740px;
-        position: relative;
-        right: 36%;
-        }
+                img{
+                    position: relative;
+                    bottom: 7px;
+                    right: 10px;
+                }
+            }
 
-        .Port{
-            position: relative;
-            top: -720px;
-            left: 115px;
-        }
-        .Sa{
-            position: relative;
-            top: -803px;
-            left: 175px;
-            font-size: 24px;
-            width: 50px;
-        }
+            .CP{
+                text-decoration: none;
+                color: black;
+            }
+
+            .BD{
+                text-decoration: none;
+                color: black;
+
+                img{
+                    height: 50px;
+                }
+            }
+
+            .PR{
+                text-decoration: none;
+                color: black;
+            }
     }
+
+    .P{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 50px;
+        text-decoration: none;
+        color: #2B75CB;
+    }
+
+
+}

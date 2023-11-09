@@ -9,7 +9,7 @@ export default function buscarProduto() {
 
         <hearder>
             <Cabecalho/>
-                <section>
+                <section className="P">
                     
                 </section>
             

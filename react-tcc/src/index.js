@@ -29,6 +29,7 @@ import Financas_estados from './pages/financas_estados';
 import Rastreio from './pages/rastreio';
 import Detalhes_produtos from './pages/detalhes-produtos'
 import PesquisaProduto from './pages/pesquisa-produto';
+import Perfil from './pages/perfil';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -62,6 +63,7 @@ root.render(
       <Route path='/rastreio' element={<Rastreio/>} />
       <Route path='/detalhes-produtos/:id' element={<Detalhes_produtos/>} />
       <Route path='/pesquisa-produtos' element={<PesquisaProduto/>} />
+      <Route path='/perfil' element={<Perfil/>} />
     </Routes>
   </BrowserRouter>
 </React.StrictMode>

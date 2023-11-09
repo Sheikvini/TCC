@@ -3,7 +3,7 @@ import './index.scss'
 import React, { useState } from 'react';
 
 export default function Novatinta() {
-  const [info1, setInfo1] = useState('');
+  const [img, setImg] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [info2, setInfo2] = useState('');
   const [info3, setInfo3] = useState('');
@@ -15,13 +15,13 @@ export default function Novatinta() {
   const [info9, setInfo9] = useState('');
   const [info10, setInfo10] = useState('');
 
-  function escolherimagem() {
-    document.getElementById('bt-envio').click();
-  }
+  // function escolherimagem() {
+  //   document.getElementById('bt-envio').click();
+  // }
 
-  function mostrarImagem() {
-    return URL.createObjectURL(info1);
-  }
+  // function mostrarImagem() {
+  //   return URL.createObjectURL(img);
+  // }
 
   return (
 
@@ -34,19 +34,19 @@ export default function Novatinta() {
 
       <p>Imagem do produto:</p>
 
-      <div className="capa-prod" onClick={escolherimagem}>
+       <div className="capa-prod"> {/*onClick={escolherimagem}
        
-       {!info1 &&
+       {!img &&
         <img src="../assets/img/icon/upload.png"></img>
       }
 
-      {!info1 &&
+      {!img &&
       <img className="imagem-capa" src= {mostrarImagem ()} alt=''/>
-      }
+      } */}
 
 
         <input className="arquivo-nt" 
-          type="file" id="bt-envio" onChange={e=> setInfo1(e.target.files[0])}/>
+          type="file" id="bt-envio" onChange={e=> setImg(e.target.files[0])}/>
         </div>
 
 

@@ -17,7 +17,24 @@
     display: flex;
     flex-direction: column;
 
+    .volta-adm{
+        position: relative;
+        bottom: 40px;
+    }
     
+    button{
+        width: 200px;
+        padding: 20px;
+        background-color: white;
+        border: none;
+        box-shadow: 1px 1px 2px 1px #a7a6a6;
+    }
+
+    button:hover{
+        background-color: #2B75CB;
+        transform: scale(1.05);
+        color: rgb(255, 255, 255);
+    }
     
     .mes > img{
         width: 50px;

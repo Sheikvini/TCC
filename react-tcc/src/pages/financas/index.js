@@ -9,9 +9,15 @@ export default function Financas() {
         <article>
         <Cabecalho/>
         <div className="financas">
+        
+           
 
        <div className="botao">
-        
+         
+            <Link className='volta-adm' to="/adm">
+                <img  src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
+            </Link>
+
         <Link to={'/financas'}>    
             <button className="lucro">
             <h1>Lucros</h1>

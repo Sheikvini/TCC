@@ -1,5 +1,7 @@
 import Cabecalho from "../../components/cabecalho";
 import "./index.scss";
+import { Link } from "react-router-dom";
+
 export default function Financas_mes() {
 
     
@@ -10,21 +12,31 @@ export default function Financas_mes() {
         <div className="financas">
 
        <div className="botao">
+
+       <Link className='volta-adm' to="/adm">
+                <img  src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
+        </Link>
         
-        <button className="lucro">
-        <h1>Lucros</h1>
-        $364.32M
-        </button>
+       <Link to={'/financas'}>    
+            <button className="lucro">
+            <h1>Lucros</h1>
+            $364.32M
+            </button>
+        </Link>
 
-        <button className="mes">
-        <h1>Venda por mês</h1>
-        Maio
-        </button>
-
-        <button className="estados">
-        <h1>Estados</h1>
-        Minas Gerais
-        </button>
+        <Link to={'/financas_mes'}>    
+            <button className="mes">
+            <h1>Venda por mês</h1>
+            Maio
+            </button>
+        </Link>
+        
+        <Link to={'/financas_estados'}>
+            <button className="estados">
+            <h1>Estados</h1>
+            Minas Gerais
+            </button>
+        </Link>
         </div>
 
     <div className="mapacalor">

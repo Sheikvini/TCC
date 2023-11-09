@@ -9,8 +9,18 @@ export default function buscarProduto() {
 
         <hearder>
             <Cabecalho/>
-                <section>
+                <section className="busca-produto">
                     
+                <Link className='volta-adm' to="/adm">
+                    <img  src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
+                </Link>
+                    
+                <div className="text-busca-produto">
+                    <h1>Busca de Produtos</h1>
+                </div>
+
+                
+
                 </section>
             
         </hearder>

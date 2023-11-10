@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
-import Cabecalho from "../../components/cabecalho-semrotas";
-import "./index.scss";
-import Rodape from "../../components/rodape"; 
+// import { Link } from "react-router-dom";
+// import Cabecalho from "../../components/cabecalho-semrotas";
+// import "./index.scss";
+// import Rodape from "../../components/rodape"; 
 
-export default function buscarProduto() {
+// export default function buscarProduto() {
 
-    return (
+//     return (
 
-        <hearder>
-            <Cabecalho/>
-                <section>
+//         <hearder>
+//             <Cabecalho/>
+//                 <section>
                     
-                </section>
+//                 </section>
             
-        </hearder>
-    )
-}
+//         </hearder>
+//     )
+// }

@@ -27,7 +27,8 @@ const Login = () => {
     try {
       const response = await axios.post(url + '/login', user);
 
-      if( response.status === 204 ) {
+      if( response.status === 200 ) {
+        localStorage.setItem('usuario-logado', JSON.stringify(response.data))
         navigate('/');
       }
     } 

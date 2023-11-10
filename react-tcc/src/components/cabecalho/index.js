@@ -5,13 +5,7 @@ import storage from 'local-storage'
 
 const Cabecalho = () => {
     
-  const [pesquisa, setPesquisa] = useState('');
-
-
-   async function Pesquisa () {
-
-    let url = `http://localhost:5032/produto/pesquisa/:pesquisa`;
-
+    const [pesquisa, setPesquisa] = useState('');
     const [usuario,setUsuario  ] = useState('');
     const [nome,setNome] = useState('');
 
@@ -22,12 +16,15 @@ const Cabecalho = () => {
       }
       else{
         const usuariologado = storage('usuario-logado')
-        setUsuario(usuariologado.nome)
+        setUsuario(usuariologado.email)
         }
-      }
-    )
+      }, [])
 
+
+   async function Pesquisa () {
+    let url = `http://localhost:5032/produto/pesquisa/:pesquisa`;
   }
+
 
   return (
     <header className="principal">
@@ -57,9 +54,8 @@ const Cabecalho = () => {
         <Link to='/perfil'>
             <img className='M' src="/assets/img/icon/imageadm.png"></img>
 
-        
-            
-            
+            <p className='nome'>{usuario}</p>
+                              
         </Link>
        
        </div>

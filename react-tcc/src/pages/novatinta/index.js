@@ -15,13 +15,7 @@ export default function Novatinta() {
   const [info9, setInfo9] = useState('');
   const [info10, setInfo10] = useState('');
 
-  // function escolherimagem() {
-  //   document.getElementById('bt-envio').click();
-  // }
-
-  // function mostrarImagem() {
-  //   return URL.createObjectURL(img);
-  // }
+  
 
   return (
 
@@ -34,7 +28,7 @@ export default function Novatinta() {
 
       <p>Imagem do produto:</p>
 
-       <div className="capa-prod"> {/*onClick={escolherimagem}
+        <div className="capa-prod"> {/*{onClick={escolherimagem}
        
        {!img &&
         <img src="../assets/img/icon/upload.png"></img>
@@ -42,7 +36,7 @@ export default function Novatinta() {
 
       {!img &&
       <img className="imagem-capa" src= {mostrarImagem ()} alt=''/>
-      } */}
+      } } */}
 
 
         <input className="arquivo-nt" 

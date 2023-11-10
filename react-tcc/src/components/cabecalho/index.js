@@ -54,7 +54,7 @@ const Cabecalho = () => {
         <Link to='/perfil'>
             <img className='M' src="/assets/img/icon/imageadm.png"></img>
 
-            <p className='nome'>{usuario}</p>
+            <p className='nome-usuario'>{usuario}</p>
                               
         </Link>
        

@@ -92,16 +92,23 @@ left: 72%;
       width: 50px;
       margin-left: 25px;
   }
-  
+
+  .text-MP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    
   .Mp{
-      display: flex;
-      justify-content: center;
-      width: 190px;
-      font-size: 19px;
-      letter-spacing: 1px;
-      position: relative;
-      left: 82vh;
+    width: 190px;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #2B75CB;
+}
+
   }
+  
 }
 
 .linha1{

@@ -34,8 +34,9 @@ return(
                     </Link>
                     
                     <div className="text-MP">
-                        <h2 className="Mp">Meu Carrinho</h2> 
+                        <h2 className="Mp">Meu Carrinho</h2>
                     </div>
+                    
                     
                 </section>
                     

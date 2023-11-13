@@ -6,7 +6,7 @@ use tcc;
 show databases;
 show tables;
 
-create table tb_cliente(
+create table    (
  id_cliente			int primary key auto_increment,
  nm_cliente			varchar(200),
  ds_sex 			ENUM ('Feminino', 'Masculino','Prefiro não informar'),

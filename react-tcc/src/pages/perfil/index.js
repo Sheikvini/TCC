@@ -7,16 +7,21 @@ import { Link } from "react-router-dom"
 
 
 
-export default function cliente() {
+export default function Perfil() {
+    
     const [cliente, setCliente] = useState([])
 
     async function listarCliente(){
         const resp = await axios.get( url + '/perfil')
 
-
-
+        setCliente(resp)
 
     }
+
+    useEffect(() => {
+        listarCliente()
+    }, [])
+    
 
 
     return(

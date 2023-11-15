@@ -47,14 +47,18 @@
 
         
 
-        .text-rastreio{
+        .text-addcar{
             text-decoration: none;
             color: #2B75CB;
-            
-            .rastreio-prod{
+            position: relative;    
+            top: 10px;
+
+            .addcar-prod{
             position: relative;
-            left: 30px;
+            left: 50px;
             height: 40px;
+            color: #2B75CB;
+            bottom: 10px;
             }
 
             p{

@@ -53,12 +53,14 @@ export default function Tintasinternas() {
                                         <p className="desc">{item.ds_descricao }</p>
                                         <p>Tipo: {item.ds_tipo}</p>
                                         
-                                        <Link className="text-rastreio" to={'https://rastreamento.correios.com.br/app/index.php'}>
-                                            <img className="rastreio-prod" src="../assets/img/cam.png"></img>
-                                            <p >Rastreiar pedido</p>
+                                        <Link className="text-addcar" to={'/carrinho'}>
+                                            <img className="addcar-prod" src="/assets/img/icon/carrinhoazul.png"></img>
+                                            <p >Adicionar ao carrinho</p>
                                         </Link>
                                        
-                                        <button>Comprar</button>
+                                        <Link to={'/pagamento'}>
+                                            <button>Comprar</button>
+                                        </Link>
                                     </div>
                                     
                                     

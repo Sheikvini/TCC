@@ -1,115 +1,262 @@
-import Cabecalho from "../../components/cabecalho";
-import './index.scss'
-import React, { useState } from 'react';
+import './index.scss';
 
-export default function Novatinta() {
-  const [img, setImg] = useState('');
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [info2, setInfo2] = useState('');
-  const [info3, setInfo3] = useState('');
-  const [info4, setInfo4] = useState('');
-  const [info5, setInfo5] = useState('');
-  const [info6, setInfo6] = useState('');
-  const [info7, setInfo7] = useState('');
-  const [info8, setInfo8] = useState('');
-  const [info9, setInfo9] = useState('');
-  const [info10, setInfo10] = useState('');
+import React, {useContext, useState} from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import Cabecalho from '../../components/cabecalho-semrotas/index.js';
+import axios from 'axios';
+import { url } from '../../apiURL';
 
+
+const CadastroProduto = () => {
+
+  const [nome, setNome] = useState('');
+  const [preco, setPreco] = useState('');
+  const [promocao, setPromocao] = useState('');
+  const [estoque, setEstoque] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [tipo, setTipo] = useState('');
+  const [disponivel, setDisponivel] = useState('');
+  const [fabricante, setFabricante] = useState('');
+  const [recomendacao, setRecomendacao] = useState('');
+  const [bairro, setBairro] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [estado, setEstado] = useState('');
+  const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState('');
+  const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(false);
+
+  const navigate = useNavigate();
   
 
-  return (
+  async function entrar() {
+    setCarregando(true);
+    setErro('');
 
-    <div className="global-nt">
-      <Cabecalho />
-      
-      
-      <div className="contt-nt">
-      <h3>Novo Produto</h3>
+  let dados = {
+    nome: nome,
+    preco: preco,
+    promocao: promocao,
+    estoque: estoque,
+    descricao: descricao,
+    tipo: tipo,
+    disponivel: disponivel,
+    fabricante: fabricante,
+    recomendacao: recomendacao,
+    bairro: bairro,
+    cidade: cidade,
+    estado: estado,
+    email: email,
+    senha: senha,
+  }
 
-      <p>Imagem do produto:</p>
+  try {
+    const response = await axios.post(url + '/cadastro', dados);
 
-        <div className="capa-prod"> {/*{onClick={escolherimagem}
-       
-       {!img &&
-        <img src="../assets/img/icon/upload.png"></img>
-      }
-
-      {!img &&
-      <img className="imagem-capa" src= {mostrarImagem ()} alt=''/>
-      } } */}
-
-
-        <input className="arquivo-nt" 
-          type="file" id="bt-envio" onChange={e=> setImg(e.target.files[0])}/>
-        </div>
-
-
-      <p className="aaa">Estoque:</p>
-      <input
-        type="text"
-        value={info2}
-        onChange={e => setInfo2(e.target.value)}
-      />
-
-      <p>Cores:</p>
-      <input
-        type="text"
-        value={info3}
-        onChange={e => setInfo3(e.target.value)}
-      />
-
-      <p>Nome:</p>
-      <input
-        type="text"
-        value={info4}
-        onChange={e => setInfo4(e.target.value)}
-      />
-
-      <p>Tipo:</p>
-      <input
-        type="text"
-        value={info5}
-        onChange={e => setInfo5(e.target.value)}
-      />
-
-      <p>Descrição:</p>
-      <input
-        type="text"
-        value={info6}
-        onChange={e => setInfo6(e.target.value)}
-      />
-
-      <p> Fabricante:</p>
-      <input
-        type="text"
-        value={info7}
-        onChange={e => setInfo7(e.target.value)}
-      />
-
-    <p> Preço:</p>
-      <input
-        type="text"
-        value={info8}
-        onChange={e => setInfo8(e.target.value)}
-      />
-
-    <p> Porcentagem de desconto:</p>
-      <input
-        type="text"
-        value={info9}
-        onChange={e => setInfo9(e.target.value)}
-      />
-
-    <p> Porcentagem de desconto:</p>
-      <input
-        type="text"
-        value={info10}
-        onChange={e => setInfo10(e.target.value)}
-      />
-
-      <button className="cadastrar-nt"> Cadastrar </button>
-    </div>
-    </div>
-  
-  );
+    if( response.status === 204 ) {
+      navigate('/');
+    }
+  } catch (err) {
+    if(err.response) {
+      setErro(err.response.data.erro)
+    } else {
+      setErro(err.erro.erro)
+    }
+    
+  }
 }
+  return (
+<article className='cont-cadastro'>
+    <Cabecalho/>
+    <header className="cadastro">
+      <section className='princ-cadastro'>
+            <Link to="/login">
+                <img className='botao-voltar1-cad' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
+            </Link>
+
+            <h2 className='txt-cadastro'>Novo Produto</h2>
+        </section>    
+      <article>  
+      <div className="bordatrasparente">
+        <div>
+          <h1 className='h1'>*CAMPO OBRIGATÓRIO </h1>
+        </div>
+      
+         <p>{erro}</p>
+
+         <div className='caixinha'>        
+        
+        
+        <section>
+          <div className='nome'>
+        
+            <span>   
+              <input
+                type="text"
+                placeholder="*Nome"
+                value={nome}
+                onChange={e => setNome(e.target.value)}
+              
+              />
+
+            </span>  
+          </div> 
+          
+          <div className='preco'>
+            <span>
+            <input
+                type="text"
+                placeholder="*Preço"
+                value={preco}
+                onChange={e => setPreco(e.target.value)}
+              
+              />
+            </span>  
+          </div> 
+        </section>
+        <section>  
+          <div className='Promoçao'>
+              <span>  
+                <input
+                  type="text" 
+                  placeholder="Promoçao"
+                  value={promocao}
+                  onChange={e => setPromocao(e.target.value)}
+                />
+              </span>  
+          </div> 
+
+          <div className='tipo'>
+            <span>
+              <input
+                type="Number"
+                placeholder="*Estoque"
+                value={estoque}
+                onChange={e => setEstoque (e.target.value)}
+              />
+              
+            
+            </span>    
+          </div>
+        </section>
+
+        <section>
+          <div className='Descrição'>
+            <span>
+              <input 
+                type= 'text'
+                placeholder="*Descrição"
+                value={descricao}
+                onChange={e => setDescricao (e.target.value)}
+              />
+
+            </span>
+          </div>
+
+          <div className='tipo'>
+            <span>
+            <input 
+                type= 'text'
+                placeholder="*Tipo"
+                value={tipo}
+                onChange={e => setTipo (e.target.value)}
+              />
+            
+            </span>  
+          </div>
+        </section>  
+
+        <section>
+          <div className='cep1'>
+            <span>  
+            <select className='sexo'
+                name="" 
+                id=""
+                value={disponivel}
+                onChange={e=> setDisponivel(e.target.value)}>
+                
+                  <option>*Disponivel</option>
+                  <option>true</option>
+                  <option>false</option>
+                  
+                </select> 
+            
+             
+              </span>
+          </div>
+
+          <div className='Fabricante'>
+            <span>
+              <input 
+                type="text"
+                placeholder="*Fabricante"
+                value={fabricante}
+                onChange={e => setFabricante (e.target.value)}
+              />
+              
+            </span> 
+          </div>
+        </section>
+      <section>
+        <div className='Recomendação'>
+        
+          <span>  
+            <input 
+              type="text"
+              placeholder="*Recomendação"
+              value={rua}
+              onChange={e => setRua (e.target.value)}
+            />
+            
+          </span>
+        
+        </div>
+      
+        <div className='Validade'>
+      
+          <span>    
+            <input 
+              type="date"
+              placeholder="*Validade"
+              value={bairro}
+              onChange={e=> setBairro(e.target.value)}
+            />
+            
+          </span>
+        </div>
+      </section>
+
+      <section>
+        <div className='categoria'>
+      
+          <span>    
+          <select className='sexo'
+                name="" 
+                id=""
+                value={tipo_endereco}
+                onChange={e=> setTipo_endereco(e.target.value)}>
+                
+                  <option>Categoria</option>
+                  <option>Internas</option>
+                  <option>Externas</option>
+                  <option>Grafite</option>
+                </select> 
+            </span>
+          </div>
+        </section>
+      </div>
+      
+    
+    
+    
+        <button className='finalizar' onClick={entrar}>Finalizar</button>
+        </div>
+      
+      </article>
+    </header>
+    </article>
+  );
+
+}
+
+export default CadastroProduto;

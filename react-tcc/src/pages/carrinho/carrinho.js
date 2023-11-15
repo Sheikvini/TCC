@@ -39,10 +39,13 @@ return(
                     
                     
                 </section>
-                    
-                    <div className="linha1">
-                        <hr className="l1"/>
-                    </div>
+                
+                <div >
+                    <Link className="rastreio-car" to={'https://rastreamento.correios.com.br/app/index.php'}>
+                        <img className="imgrastreio-car" src="/assets/img/cam.png"/>
+                        <p>Rastrear Pedido</p>
+                    </Link>
+                </div>
 
             </section> 
             <footer className="rod-carrinho">

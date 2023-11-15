@@ -1,18 +1,18 @@
 import React, { useState,useEffect } from 'react';
 import "./index.scss"
-import { Link, Navigate } from 'react-router-dom';
-import storage from 'local-storage'
+import { Link, useNavigate } from 'react-router-dom';
+import storage from 'local-storage';
 
 const Cabecalho = () => {
     
     const [pesquisa, setPesquisa] = useState('');
     const [usuario,setUsuario  ] = useState('');
     const [nome,setNome] = useState('');
-
+    const navigate = useNavigate();
     
     useEffect(() => {
       if(!storage('usuario-logado')){
-          Navigate('/login');
+          navigate('/login');
       }
       else{
         const usuariologado = storage('usuario-logado')
@@ -20,6 +20,7 @@ const Cabecalho = () => {
         }
       }, [])
 
+      
 
    async function Pesquisa () {
     let url = `http://localhost:5032/produto/pesquisa/:pesquisa`;
@@ -48,16 +49,18 @@ const Cabecalho = () => {
             <img></img>
         </button>
 
+      <section className='car-usu'>
+
         <Link to='/carrinho'>
             <img className='C' src="/assets/img/icon/imagecarrinho.png"></img>
         </Link>
-        <Link to='/perfil'>
+        <Link className='icon-usuario' to='/perfil'>
             <img className='M' src="/assets/img/icon/imageadm.png"></img>
 
             <p className='nome-usuario'>{usuario}</p>
                               
         </Link>
-       
+        </section>
        </div>
       </section>
 

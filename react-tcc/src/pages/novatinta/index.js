@@ -18,11 +18,8 @@ const CadastroProduto = () => {
   const [disponivel, setDisponivel] = useState('');
   const [fabricante, setFabricante] = useState('');
   const [recomendacao, setRecomendacao] = useState('');
-  const [bairro, setBairro] = useState('');
-  const [cidade, setCidade] = useState('');
-  const [estado, setEstado] = useState('');
-  const [senha, setSenha] = useState('');
-  const [email, setEmail] = useState('');
+  const [validade, setValidade] = useState('');
+  const [categoria, setCategoria] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
 
@@ -43,11 +40,8 @@ const CadastroProduto = () => {
     disponivel: disponivel,
     fabricante: fabricante,
     recomendacao: recomendacao,
-    bairro: bairro,
-    cidade: cidade,
-    estado: estado,
-    email: email,
-    senha: senha,
+    validade: validade,
+    categoria: categoria
   }
 
   try {
@@ -204,8 +198,8 @@ const CadastroProduto = () => {
             <input 
               type="text"
               placeholder="*Recomendação"
-              value={rua}
-              onChange={e => setRua (e.target.value)}
+              value={recomendacao}
+              onChange={e => setRecomendacao (e.target.value)}
             />
             
           </span>
@@ -218,8 +212,8 @@ const CadastroProduto = () => {
             <input 
               type="date"
               placeholder="*Validade"
-              value={bairro}
-              onChange={e=> setBairro(e.target.value)}
+              value={validade}
+              onChange={e=> setValidade(e.target.value)}
             />
             
           </span>
@@ -233,8 +227,8 @@ const CadastroProduto = () => {
           <select className='sexo'
                 name="" 
                 id=""
-                value={tipo_endereco}
-                onChange={e=> setTipo_endereco(e.target.value)}>
+                value={categoria}
+                onChange={e=> setCategoria(e.target.value)}>
                 
                   <option>Categoria</option>
                   <option>Internas</option>

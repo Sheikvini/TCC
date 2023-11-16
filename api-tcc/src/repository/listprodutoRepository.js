@@ -14,7 +14,7 @@ export async function  buscarProduto(nomeProduto){
 
   const [resp] = await conexao.query(comando, [`%${nomeProduto}%`])
 
-  return resp
+  return resp[0]
 }
 
 

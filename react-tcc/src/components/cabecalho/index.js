@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import "./index.scss"
 import { Link, useNavigate } from 'react-router-dom';
 import storage from 'local-storage';
+import axios from 'axios'
 
 const Cabecalho = () => {
     
@@ -22,8 +23,15 @@ const Cabecalho = () => {
 
       
 
-   async function Pesquisa () {
-    let url = `http://localhost:5032/produto/pesquisa/:pesquisa`;
+  async function pesquisarProduto(e) {
+    if(e.key === 'Enter'){
+      const resp = await axios.get(`http://localhost:5032/produto/pesquisa/${pesquisa}`)
+      const produto = resp.data
+      console.log(produto);
+      navigate(`/detalhes-produtos/${produto.id_produto}`)
+    }
+    
+
   }
 
 
@@ -36,6 +44,7 @@ const Cabecalho = () => {
         </Link>
         <div className="search-bar">
           <input
+            onKeyDown={(e) => pesquisarProduto(e)}
             type="text"
             placeholder="Pesquise Aqui..."
             value={pesquisa}

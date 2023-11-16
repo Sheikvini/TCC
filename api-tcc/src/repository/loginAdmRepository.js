@@ -12,5 +12,5 @@ export async function verificarLoginadm(usuario,senha) {
      
    const [dados] = await conexao.query(comando, [usuario,senha]);
 
-    return dados
+    return dados;
 }

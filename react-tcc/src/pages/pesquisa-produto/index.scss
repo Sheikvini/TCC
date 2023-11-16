@@ -1,20 +1,58 @@
-<<<<<<< HEAD
-.busca-produto{
-    
-    // background-image: url(../../../public/assets/img/fundo3.png);
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    height: 400px;
+.mae-buscar {
 
-    .text-busca-produto{
-        text-align: center;
+
+
+    .busca-produto{
+    
+        background-image: url(../../../public/assets/img/fundo3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+    
+        .text-busca-produto{
+            text-align: center;
+        }
+    
+    
+    .P{
+        background-image: url(../../../public/assets/img/fundo3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
+table {
+
+
+
+thead {
+
+    tr {
+        border: 1px solid black;
     }
 
+    th {
 
-=======
-.P{
-    background-image: url(../../../public/assets/img/fundo3.png);
-    background-repeat: no-repeat;
-    background-size: cover;
->>>>>>> 82c44aa6bc681908f4191e75649977db94a12de2
+    }
+}
+
+
+tbody {
+  
+    tr {
+
+        td {
+            margin-top: 100px;
+            padding: 30px;
+            border: 1px solid black;
+        }
+    }
+}
+
+
+
+}
+
+
 }

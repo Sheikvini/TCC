@@ -72,3 +72,16 @@ export async function alterarProduto(id,produto){
         return resp.affectedRows;
       }
       
+export async function Buscar (categoria) {
+
+  let comando = `select nm_produto   ,
+  nm_categoria ,
+  vl_preco     
+  from tb_produto where nm_categoria = ?` 
+
+
+  let r = await conexao.query (comando, [categoria])
+
+  return r ;
+
+}

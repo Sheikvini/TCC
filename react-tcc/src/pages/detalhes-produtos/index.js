@@ -2,9 +2,11 @@ import Cabecalho from "../../components/cabecalho"
 import "./index.scss"
 import Rodape from "../../components/rodape"
 import { useEffect, useState } from "react"
+import Storage from "local-storage"
 import axios from "axios"
-import { url } from "../../apiURL"
+import { url } from "../../constants"
 import { Link, useParams } from "react-router-dom"
+import { toast } from 'react-toastify'
 
 export default function Tintasinternas() {
     const [produtos, setProdutos] = useState([])
@@ -20,6 +22,24 @@ export default function Tintasinternas() {
         setProdutos(respFiltrados)
 
     }
+
+    function AdicionarCarrinho(){
+        let carrinho = [];
+        if (Storage('carrinho')) {
+            carrinho = Storage('carrinho');
+        }
+
+        if (!carrinho.find(item => item.id === id)){
+            carrinho.push({
+                id:id,
+                qtd:1
+            })
+            
+            Storage('carrinho', carrinho);
+            
+        }  
+        toast.dark('Produto adicionado ao carrinho!');
+     }
 
     useEffect(() => {
         listarProdutos()
@@ -53,13 +73,13 @@ export default function Tintasinternas() {
                                         <p className="desc">{item.ds_descricao }</p>
                                         <p>Tipo: {item.ds_tipo}</p>
                                         
-                                        <Link className="text-addcar" to={'/carrinho'}>
+                                        <div className="text-addcar" onClick={AdicionarCarrinho}>
                                             <img className="addcar-prod" src="/assets/img/icon/carrinhoazul.png"></img>
-                                            <p >Adicionar ao carrinho</p>
-                                        </Link>
+                                            <p  >Adicionar ao carrinho</p>
+                                        </div>
                                        
                                         <Link to={'/pagamento'}>
-                                            <button>Comprar</button>
+                                            <button>Comprar</button> 
                                         </Link>
                                     </div>
                                     

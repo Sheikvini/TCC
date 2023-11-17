@@ -4,7 +4,7 @@ import React, { useContext,useState } from 'react';
 import Cabecalho from '../../components/cabecalho-semrotas'
 import axios from 'axios';
 import { LoginContext } from '../../context';
-import { url } from '../../apiURL';
+import { url } from '../../constants';
 const Loginadm = () => {
     
     const [usuario, setUsuario] = useState('');

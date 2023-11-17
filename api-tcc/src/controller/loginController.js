@@ -7,7 +7,6 @@ endpoint.post('/login', async (req, resp) => {
   try {
     let {email,senha} = req.body;
 
-
     let resposta = await verificarLogin(email,senha)
 
     if(!email)
@@ -19,7 +18,7 @@ endpoint.post('/login', async (req, resp) => {
     if(resposta.length < 1)
       throw new Error('Senha ou Usuário incorretos');
 
-      resp.status(204).send();
+      resp.send(resposta);
     
   } catch (err) {
     resp.status(500).send({erro: err.message});

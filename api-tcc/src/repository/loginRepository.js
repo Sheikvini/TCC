@@ -6,20 +6,20 @@ export async function verificarLogin(email,senha) {
       SELECT 
       id_cliente as id,
       ds_email as email,
-      ds_cpf   as cpf ,
       ds_senha as senha
       FROM tb_cliente
       where ds_email = ?
       and ds_senha = ?
     `
     
-   const [dados] = await conexao.query(comando, [email,senha]);
+   const dados = await conexao.query(comando, [email,senha]);
 
-    return dados;
+   let linhas = dados[0]
+   let linha = linhas [0]
+   console.log (linha)
+   
+   return linha;
 }
 
 
 
-export async function BuscarCliente () {
-
-}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import Card from '../../../components/card';
 import { Link } from 'react-router-dom';
-import { url } from '../../../apiURL';
+import { url } from '../../../constants';
 
 function Hard() {
   const imagens = [

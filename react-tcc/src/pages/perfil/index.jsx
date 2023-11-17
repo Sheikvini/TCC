@@ -2,14 +2,13 @@ import Cabecalho from "../../components/cabecalho"
 import "./index.scss"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { url } from "../../apiURL"
+import { url } from "../../constants"
 import { Link, useNavigate } from 'react-router-dom';
 import storage from 'local-storage';
 
 export default function Perfil() {
     const [pesquisa, setPesquisa] = useState('');
     const [usuario,setUsuario  ] = useState('');
-    const [usuario1,setUsuario1 ] = useState('');
     const [nome,setNome] = useState('');
     const navigate = useNavigate();
     
@@ -38,16 +37,13 @@ export default function Perfil() {
            <div className="profile">
                 <img className="Pp" src="/assets/img/icon/popo.png" alt="" />
                 
-        
+                <div className="info-pessoais">
+                   <h5>Usuário:</h5> <p>{usuario}</p>
+                </div>
+                
                 <div className="botao-sair-perfil">       
                     <button className="sair-perfil" onClick={sair}>Sair</button>
                 </div>
-
-                <div className="info-pessoais">
-                   <input type="text" placeholder={usuario} />
-                   <p>{usuario}</p>
-                </div>
-
            </div>
            </section> 
         </article>

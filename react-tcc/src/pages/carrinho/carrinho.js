@@ -2,9 +2,39 @@ import Cabecalho from "../../components/cabecalho-semrotas"
 import "./carrinho.scss"
 import Rodape from "../../components/rodape"
 import { Link } from 'react-router-dom';
-
+import { useEffect, useState } from "react";
+import Storage from "local-storage";
+import { buscarProdutoPorId } from "../../api/produtoAPI";
+import CarrinhoItem from "../../components/carrinhoitem";
 
 export default function Carrinho(){
+
+    const [itens, setItens] = useState([]);
+
+    async function carregarCarinho(){
+        let carrinho = Storage('carrinho');
+        if (carrinho){
+
+            let temp = [];
+
+            for (let produto of carrinho) {
+               let p = await buscarProdutoPorId(produto.id);   
+              
+               temp.push(...itens, {
+                produto: p,
+                qtd: produto.qtd
+               })
+            }
+            console.log(temp);
+            setItens(temp);
+        }
+        
+    }
+
+    useEffect(() => {
+        carregarCarinho();
+    }, [])
+
 return(
      <header>
        <Cabecalho/>
@@ -47,6 +77,23 @@ return(
                     </Link>
                 </div>
 
+                <div className="carrinho">    
+                    <div className="itens">
+                        {itens.map(item =>
+                            <CarrinhoItem />
+                        )}
+                    </div>
+
+
+                    
+
+                    <div className="resumo">
+                        <h1>Subtotal</h1>
+                        <h3>(3 itens)</h3>
+                        <p>R$ 9999,00</p>
+                        <button>Fechar Pedido</button>
+                    </div>
+                </div>
             </section> 
             <footer className="rod-carrinho">
                 <Rodape/>

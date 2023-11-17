@@ -4,7 +4,8 @@ import React, { useContext, useState } from 'react';
 import Cabecalho from '../../components/cabecalho-semrotas'
 import axios from 'axios';
 import { LoginContext } from '../../context';
-import { url } from '../../apiURL';
+import { url } from '../../constants';
+
 const Login = () => {
     
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
   
 
-  async function entrar() {
+  async function Entrar() {
     setCarregando(true);
     setErro('');
 
@@ -93,7 +94,7 @@ const Login = () => {
                     </div>
 
                     
-                     <button onClick={entrar}>Entrar</button>
+                     <button onClick={Entrar}>Entrar</button>
                     <p className='er'>{erro}</p>
                 </span>
                 

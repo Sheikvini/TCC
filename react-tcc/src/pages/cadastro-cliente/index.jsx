@@ -4,7 +4,7 @@ import React, {useContext, useState} from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 import axios from 'axios';
-import { url } from '../../apiURL';
+import { url } from '../../constants';
 
 const Cadastro = () => {
 

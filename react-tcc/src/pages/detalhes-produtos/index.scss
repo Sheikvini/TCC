@@ -44,14 +44,14 @@
                 align-items: center;
             }
         }
-
         
-
+        
         .text-addcar{
             text-decoration: none;
             color: #2B75CB;
             position: relative;    
             top: 10px;
+            display: none; //ESCONDENDO O CARRINHO
 
             .addcar-prod{
             position: relative;

@@ -26,7 +26,7 @@ const Cabecalho = () => {
 
   async function pesquisarProduto(e) {
     if(e.key === 'Enter'){
-      const resp = await axios.get(url +`/pesquisa/${pesquisa}`)
+      const resp = await axios.get(`http://localhost:5040/pesquisa/${pesquisa}`)
       const produto = resp.data
       console.log(produto);
       navigate(`/detalhes-produtos/${produto.id_produto}`)

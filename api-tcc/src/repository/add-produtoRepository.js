@@ -1,7 +1,7 @@
 import conexao from "./connection.js";
 
 export async function InserirNovoProduto(produto) {
-    const comando = 'insert into tb_produto (img_produto, nm_nome, vl_preco, vl_promocao, qtd_estoque, ds_descricao, ds_tipo, bt_disponivel, ds_fabricante, ds_recomendacao, ds_validade, nm_categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const comando = 'insert into tb_produto (img_produto, nm_produto, vl_preco, vl_promocao, qtd_estoque, ds_descricao, ds_tipo, bt_disponivel, ds_fabricante, ds_recomendacao, ds_validade, nm_categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
    
     const [resposta] = await conexao.query(comando, [
         produto.img, 
@@ -26,8 +26,8 @@ export async function InserirNovoProduto(produto) {
 export async function nvproduto(produto) {
     let comando = `
         select cc.id_produto			        as id,
-                cc.img_produto                  as img        
-                cc.nm_produto				    as produto,
+                cc.img_produto             as img        
+                cc.nm_produto				    as nome,
                 cc.vl_preco			            as preco,
                 cc.vl_promocao			        as promocao,
                 cc.qtd_estoque                  as estoque,

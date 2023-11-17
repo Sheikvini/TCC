@@ -5,10 +5,10 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 import axios from 'axios';
 import { url } from '../../constants';
-
+import { toast } from 'react-toastify'
 
 const CadastroProduto = () => {
-
+  const [img, setImg] = useState('');
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
   const [promocao, setPromocao] = useState('');
@@ -30,7 +30,10 @@ const CadastroProduto = () => {
     setCarregando(true);
     setErro('');
 
+    toast.dark('Produto adicionado ao carrinho!');
+    
   let dados = {
+    img:img,
     nome: nome,
     preco: preco,
     promocao: promocao,
@@ -45,7 +48,7 @@ const CadastroProduto = () => {
   }
 
   try {
-    const response = await axios.post(url + '/cadastro', dados);
+    const response = await axios.post(url + '/inserir', dados);
 
     if( response.status === 204 ) {
       navigate('/');
@@ -80,7 +83,21 @@ const CadastroProduto = () => {
 
          <div className='caixinha'>        
         
-        
+        <section>
+          <div className='url'>
+          <span>   
+              <input
+                type="text"
+                placeholder="*url"
+                value={img}
+                onChange={e => setImg(e.target.value)}
+              
+              />
+
+            </span> 
+          </div>
+        </section>
+
         <section>
           <div className='nome'>
         
@@ -99,7 +116,7 @@ const CadastroProduto = () => {
           <div className='preco'>
             <span>
             <input
-                type="text"
+                type="number"
                 placeholder="*Preço"
                 value={preco}
                 onChange={e => setPreco(e.target.value)}
@@ -112,7 +129,7 @@ const CadastroProduto = () => {
           <div className='Promoçao'>
               <span>  
                 <input
-                  type="text" 
+                  type="number" 
                   placeholder="Promoçao"
                   value={promocao}
                   onChange={e => setPromocao(e.target.value)}
@@ -170,8 +187,8 @@ const CadastroProduto = () => {
                 onChange={e=> setDisponivel(e.target.value)}>
                 
                   <option>*Disponivel</option>
-                  <option>true</option>
-                  <option>false</option>
+                  <option>1</option>
+                  <option>0</option>
                   
                 </select> 
             
@@ -242,8 +259,9 @@ const CadastroProduto = () => {
       
     
     
-    
+        
         <button className='finalizar' onClick={entrar}>Finalizar</button>
+         
         </div>
       
       </article>

@@ -8,8 +8,10 @@ endpoint.post('/inserir', async (req, resp) => {
     try {
         const produto = await req.body;
 
+        if(!produto.img)
+            throw new Error('⚠ Img obrigatório')
     
-        if(!produto.produto)
+        if(!produto.nome)
             throw new Error('⚠ Nome obrigatório')
 
         if(!produto.preco)

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { url } from "../../constants"
 import { Link, useNavigate } from 'react-router-dom';
+import Rodape from "../../components/rodape"
 import storage from 'local-storage';
 
 export default function Perfil() {
@@ -46,6 +47,7 @@ export default function Perfil() {
                 </div>
            </div>
            </section> 
+           
         </article>
     )
 }

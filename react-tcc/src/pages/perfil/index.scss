@@ -1,7 +1,13 @@
 .container-perfil{
  display: flex;
  flex-direction: column;
-  
+ background-image: url(../../../public/assets/img/fundo3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+        
+
+       
  .subcontainer-perfil{
   display: flex;
   justify-content: center;

@@ -99,15 +99,7 @@ const Cadastro = () => {
               
               />
 
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-
-                />
-              </button>
+              
             </span>  
           </div> 
           
@@ -149,16 +141,7 @@ const Cadastro = () => {
                 value={cpf}
                 onChange={e => setCpf (e.target.value)}
               />
-              
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-
-                  />
-              </button>
+             
             </span>    
           </div>
         </section>
@@ -172,15 +155,7 @@ const Cadastro = () => {
                 value={telefone}
                 onChange={e => setTelefone (e.target.value)}
               />
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-
-                />
-              </button>
+              
             </span>
           </div>
 
@@ -212,14 +187,7 @@ const Cadastro = () => {
                 onChange={e => setCep (e.target.value)}
               />
             
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-                />
-                </button>
+            
               </span>
           </div>
 
@@ -231,14 +199,7 @@ const Cadastro = () => {
                 value={numero_complemento}
                 onChange={e => setNumero_complemento (e.target.value)}
               />
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-                />
-              </button>
+              
             </span> 
           </div>
         </section>
@@ -252,14 +213,8 @@ const Cadastro = () => {
               value={rua}
               onChange={e => setRua (e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+            
+           
           </span>
         
         </div>
@@ -273,14 +228,7 @@ const Cadastro = () => {
               value={bairro}
               onChange={e=> setBairro(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+            
           </span>
         </div>
       </section>
@@ -295,14 +243,7 @@ const Cadastro = () => {
               value={cidade}
               onChange={e => setCidade (e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+            
           </span>
         </div>
       
@@ -315,14 +256,7 @@ const Cadastro = () => {
               value={estado}
               onChange={e => setEstado (e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+            
           </span>
         </div>
       </section>
@@ -340,15 +274,7 @@ const Cadastro = () => {
         onChange={e => setEmail (e.target.value)}
 
       />
-      <button >
-        <img
-          src= 'assets/img/icon/alterar_icone.png'
-          alt="Alterar"
-          width="10"
-          height="10"
-
-        />
-      </button>
+     
       </div>
 
       <div className='senha'>
@@ -358,15 +284,7 @@ const Cadastro = () => {
         value={senha}
         onChange={e => setSenha (e.target.value)}
       />
-      <button >
-        <img
-          src= 'assets/img/icon/alterar_icone.png'
-          alt="Alterar"
-          width="10"
-          height="10"
-
-        />
-      </button>
+     
       </div>
     
     </div>

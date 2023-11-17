@@ -45,14 +45,14 @@ endpoints.post('/cadastro', async (req, resp) => {
         throw new Error('⚠ Estado obrigatório');
 
          if (!cliente.email)
-        throw new Error('⚠ Email obrigatória');
+        throw new Error('⚠ Usuário obrigatória');
 
          if (!cliente.senha)
         throw new Error('⚠ Senha obrigatório');
 
         let r1 = await consultar(cliente.email);
         if (r1.length > 0)
-        throw new Error('⚠ Email já cadastrado!');
+        throw new Error('⚠ Usuário já cadastrado!');
 
         let dados = await NovoCadastro(cliente)
         resp.send(dados)

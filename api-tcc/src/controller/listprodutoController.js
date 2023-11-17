@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { listarProdutos, deletarProduto, buscarProduto, Buscar} from "../repository/listprodutoRepository.js";
 
-let endpoints = Router();
+const endpointsTeste = Router();
 
-endpoints.delete('/deletar-produto/:id', async (req, resp) => {
+endpointsTeste.delete('/deletar-produto/:id', async (req, resp) => {
     try {
       let id = req.params.id;
       let r = await deletarProduto(id);
@@ -17,23 +17,29 @@ endpoints.delete('/deletar-produto/:id', async (req, resp) => {
     }
   });
 
-  endpoints.get('/produto', async (req, resp) => {
-
+  endpointsTeste.get('/produto', async (req, resp) => {
+    
     let resposta = await listarProdutos()
 
     resp.send(resposta);
   });
 
-  endpoints.get('/produto/pesquisa/:pesquisa', async (req, resp) => {
-    
-    const {pesquisa} = req.params
-
-    const resposta = await buscarProduto(pesquisa)
-    
-    resp.send(resposta);
+  endpointsTeste.get('/produto/pesquisa/:pesquisa', async (req, resp) => {
+    try{
+      const {pesquisa} = req.params
+  
+      const resposta = await buscarProduto(pesquisa)
+      
+      resp.send('resposta');
+    }
+    catch(err){
+      resp.status(500).send({
+        erro: err.message
+      })
+    }
   });
 
-  endpoints.put('/alterar-produto/:id', async (req, resp) => {
+  endpointsTeste.put('/alterar-produto/:id', async (req, resp) => {
     try {
       let produto = req.body;
       let id = req.params.id;
@@ -51,7 +57,7 @@ endpoints.delete('/deletar-produto/:id', async (req, resp) => {
 
 
 
-  endpoints.get ('/categoria/:id', async (req,resp)=> {
+  endpointsTeste.get ('/categoria/:id', async (req,resp)=> {
 
   const categoria = Number(req.params);
 
@@ -61,4 +67,4 @@ resp.send(r)
   })
 
 
-export default endpoints;
+export default endpointsTeste

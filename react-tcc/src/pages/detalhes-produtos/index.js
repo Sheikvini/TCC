@@ -8,6 +8,7 @@ import { url } from "../../constants"
 import { Link, useParams } from "react-router-dom"
 import { toast } from 'react-toastify'
 
+
 export default function Tintasinternas() {
     const [produtos, setProdutos] = useState([])
     const {id} = useParams()
@@ -33,12 +34,13 @@ export default function Tintasinternas() {
             carrinho.push({
                 id:id,
                 qtd:1
+               
             })
-            
+           
             Storage('carrinho', carrinho);
             
         }  
-        toast.dark('Produto adicionado ao carrinho!');
+         toast.success('Produto adicionado ao carrinho!');
      }
 
     useEffect(() => {

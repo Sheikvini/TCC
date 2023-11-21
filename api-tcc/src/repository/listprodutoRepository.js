@@ -17,6 +17,14 @@ export async function  buscarProduto(nomeProduto){
   return resp[0]
 }
 
+export async function  buscarProdutoPorId(id){
+  const comando = `select * from tb_produto
+                      where id_produto like ? `
+
+  const [resp] = await conexao.query(comando, [`%${id}%`])
+
+  return resp[0]
+}
 
 export async function deletarProduto(id){
     const comando = 'delete * from tb_produto where id = ?';

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { url } from "../../constants"
 import { Link, useNavigate } from 'react-router-dom';
+import Rodape from "../../components/rodape"
 import storage from 'local-storage';
 
 export default function Perfil() {
@@ -38,7 +39,7 @@ export default function Perfil() {
                 <img className="Pp" src="/assets/img/icon/popo.png" alt="" />
                 
                 <div className="info-pessoais">
-                   <h5>Usuário:</h5> <p>{usuario}</p>
+                   <h1>Usuário:</h1> <h3>{usuario}</h3>
                 </div>
                 
                 <div className="botao-sair-perfil">       
@@ -46,6 +47,7 @@ export default function Perfil() {
                 </div>
            </div>
            </section> 
+           <Rodape />
         </article>
     )
 }

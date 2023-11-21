@@ -3,16 +3,17 @@ import "./carrinho.scss"
 import Rodape from "../../components/rodape"
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import Storage from "local-storage";
+import storage from "local-storage";
 import { buscarProdutoPorId } from "../../api/produtoAPI";
 import CarrinhoItem from "../../components/carrinhoitem";
 
 export default function Carrinho(){
 
     const [itens, setItens] = useState([]);
+  
 
     async function carregarCarinho(){
-        let carrinho = Storage('carrinho');
+        let carrinho = storage('carrinho');
         if (carrinho){
 
             let temp = [];
@@ -20,7 +21,7 @@ export default function Carrinho(){
             for (let produto of carrinho) {
                let p = await buscarProdutoPorId(produto.id);   
               
-               temp.push(...itens, {
+               temp.push({
                 produto: p,
                 qtd: produto.qtd
                })
@@ -79,9 +80,9 @@ return(
 
                 <div className="carrinho">    
                     <div className="itens">
-                        {itens.map(item =>
-                            <CarrinhoItem />
-                        )}
+                        {itens.map((item) =>
+                            <CarrinhoItem item={item} />
+                         )}
                     </div>
 
 

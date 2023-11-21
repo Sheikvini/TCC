@@ -7,6 +7,7 @@ export default function CarrinhoItem(props){
 
 
 
+
     return (
         <div className="comp-carrinho-item">
                     <div className="produto-container">

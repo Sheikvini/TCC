@@ -32,6 +32,17 @@ export default function Carrinho(){
         
     }
 
+    function valortotal() {
+        for (let item of itens) {
+            
+            itens = item.produto.vl_preco
+         
+        }
+
+        
+
+    }
+
     useEffect(() => {
         carregarCarinho();
     }, [])
@@ -91,7 +102,7 @@ return(
                     <div className="resumo">
                         <h1>Subtotal</h1>
                         <h3>(3 itens)</h3>
-                        <p>R$ 9999,00</p>
+                        <p>R$ {valortotal} </p>
                         <button>Fechar Pedido</button>
                     </div>
                 </div>

@@ -8,6 +8,6 @@ const api = axios.create({
 })
 
 export async function buscarProdutoPorId(id) {
-    const r = await api.get('/produto');
+    const r = await api.get('/produto/' + id);
     return r.data;
   }

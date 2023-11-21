@@ -5,22 +5,24 @@ import { useNavigate } from "react-router-dom";
 
 export default function CarrinhoItem(props){
 
+
+
     return (
         <div className="comp-carrinho-item">
                     <div className="produto-container">
                         <div className="produto-box">
                             <div className="imagens">
-                                <div className="atual">
-                                    <img src="../tinta1.png"/>
-                                </div>
+                          
+                                   <img className="img-carrinho" src={props.item.produto.img_produto} ></img>
+                                
                             </div>
                             <div className="detalhes">
-                                <div className="nome"> Nome do produto Top aqui</div>
-                                <div className="departamento">departamento aqui </div>
+                                <div className="nome">{props.item.produto.nm_produto}</div>
+                                <div className="departamento">{props.item.produto.nm_categoria} </div>
 
                                 <div className="preco-label">PREÇO</div>
-                                <div className="preco"> R$ 123,45</div>
-                            </div>
+                                <div className="preco"> R$ {props.item.produto.vl_preco}</div>
+                            </div>  
                         </div>
                         <div className="qtd-box">
                             <div className="qtd">

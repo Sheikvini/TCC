@@ -66,5 +66,31 @@
          font-family: 'Quicksand', cursive;
 
      }
- 
+ }
+
+ @media only screen and (max-width: 468px){
+    .h1-sn{
+        position: absolute;
+        left: 10px;
+    }
+
+    .h5-sn{
+        position: absolute;
+        left: -20px;
+    }
+ }
+
+ @media only screen and (max-width:468px) {
+    p{
+        max-width: 400px;
+        font-size: 16px;
+    }
+
+    .imagens{
+        position: relative;
+        left: -60px;
+        height: 150px;
+    }
+
+    
  }

@@ -130,11 +130,11 @@
                     padding: 10px 20px;
                     border-radius: 15px;
                     cursor: pointer;
-                    transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                    transition: background-color 0.3s ease; 
                     
                 }
                 
-                /* Estilos ao passar o mouse */
+
                 button:hover {
                     background-color: #ffffff;
                     color: #2B75CB;
@@ -179,11 +179,10 @@
                         padding: 10px 20px;
                         border-radius: 15px;
                         cursor: pointer;
-                        transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                        transition: background-color 0.3s ease; 
                         box-shadow: 1px 1px 1px 1px #c1c1c1;
                     }
                     
-                    /* Estilos ao passar o mouse */
                     button:hover {
                         background-color: #ffffff;
                         color: #2B75CB;
@@ -236,11 +235,11 @@
                         padding: 10px 20px;
                         border-radius: 15px;
                         cursor: pointer;
-                        transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                        transition: background-color 0.3s ease;
                         box-shadow: 1px 1px 1px 1px #c1c1c1;
                     }
                     
-                    /* Estilos ao passar o mouse */
+                  
                     button:hover {
                         background-color: #ffffff;
                         color: #2B75CB;
@@ -307,11 +306,10 @@
                             padding: 10px 20px;
                             border-radius: 15px;
                             cursor: pointer;
-                            transition: background-color 0.3s ease; /* Adicionando transição de cor de fundo */
+                            transition: background-color 0.3s ease;
                             box-shadow: 1px 1px 1px 1px #c1c1c1;
                     }
                     
-                    /* Estilos ao passar o mouse */
                         button:hover {
                             background-color: #ffffff;
                             color: #2B75CB;
@@ -345,13 +343,123 @@
                     font-weight: 800;
                     position:relative;
                     top: 35px;
-
                 }
         
         }
-
-        
-
-       
     }
 }
+
+@media only screen and (max-width: 468px) {
+    .inicial {
+      flex-direction: column;
+      max-width: 60%;
+      position:relative ;
+      left: 130px;
+
+    p{
+        position: absolute ;
+       left: -150px !important;
+        top: 10px;
+    }
+
+    h1{
+        position: absolute;
+        left: -150px ;
+        top: -90px;
+        height: 100px;
+    }
+
+    h5{
+        display: flex;
+        position: absolute;
+        top: 30px;
+        left: -150px;
+    }
+
+
+      .button-home{
+        position: relative;
+        right: 180px;
+        width: 100px;
+        height: 10px;
+        top: 50px;
+      }
+    }
+    
+}
+
+
+
+
+@media only screen and (max-width: 468px) {
+    .grafite {
+      width: 100%;
+      max-width: 100%; 
+      background-position-x: relative;
+
+
+      .grafit{
+      
+        .lata{
+            width: 130px; 
+        }
+
+        .g{
+            width: 200px;
+            height: 200px;
+        }
+        .adesivo{
+            width: 120px;
+            left: -30px;
+        }
+      }
+   }
+}
+
+@media only screen and (max-width: 468px) {
+    .externas {
+      flex-direction: column;
+      max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 468px) {
+    .internas {
+        position: relative;
+      flex-direction: column;
+      max-width: 100%;
+
+      h1{
+        width: 150px;
+        height: 150px;
+      }
+
+      p{
+        width: 100px;
+        height: 100px;
+      }
+
+      button{
+        width: 150px;
+        height: 90px;
+      }
+    }
+}
+
+
+@media only screen and (max-width: 468px){
+    .marcas{
+        position: relative;
+        left:1px;
+        width: 490px;
+    }
+}
+
+@media only screen and (max-width: 468px){
+    .azul{
+        
+        background-size: auto;
+    }
+}
+  
+ 

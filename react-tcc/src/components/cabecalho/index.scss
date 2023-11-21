@@ -176,3 +176,39 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 468px){
+    .cont{
+        position: relative;
+        left: 1px;
+    }
+    .paginas{
+        position:relative;
+        left: 1px;
+    }
+
+
+    .sub-menu{
+        position: relative;
+        left: 1px;
+
+        .sp{
+            position: relative;
+            left: 30px;
+            top: 1px;
+        }
+        .h{
+            position: relative;
+            left:12px ;
+        }
+    }
+    
+    .search-bar{
+        max-width: 100%;
+        display: none;
+        position: relative;
+        left: 130px;
+    }
+}
+

@@ -105,4 +105,64 @@
             margin-top: 5px;
         }
     }
+    /* Estilos não responsivos (para telas maiores) */
+
+header.rodape {
+    /* Seus estilos não responsivos aqui */
+  }
+  
+  /* Estilos responsivos (para telas menores) */
+  
+  @media only screen and (max-width: 768px) {
+    header.rodape {
+      display: flex;
+      flex-direction: column;
+  
+      .cont-rod {
+        flex-direction: column;
+  
+        div {
+          margin-bottom: 15px;
+        }
+  
+        img {
+          width: 50px; /* Ou qualquer tamanho desejado */
+        }
+      }
+  
+      footer {
+        display: flex;
+        flex-direction: column;
+  
+        div {
+          margin-bottom: 15px;
+  
+          h1 {
+            margin-bottom: 5px;
+          }
+  
+          ul {
+            list-style: none;
+            padding: 0;
+  
+            li {
+              margin-bottom: 5px;
+            }
+          }
+        }
+  
+        .redes-sociais {
+          img {
+            margin-right: 10px;
+          }
+        }
+      }
+  
+      img {
+        width: 100px; /* Ou qualquer tamanho desejado */
+        margin-top: 15px;
+      }
+    }
+  }
+  
     

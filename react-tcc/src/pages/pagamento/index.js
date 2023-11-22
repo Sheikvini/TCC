@@ -1,18 +1,19 @@
 import './index.scss';
 import Pagamento from '../../components/pagamento/index.js';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
-
+import { ToastContainer, toast } from 'react-toastify';
 export default function Cagamento() {
-  const handleClick = () => {
-    
-    alert('Botão "Finalizar" clicado!');
-  };
+  const [concluido, setConcluido] = useState(false)
+
+  if(concluido)
+    toast.success('Pedido concluído')
 
   return (
   
 <article className='cont-cadastro'>
+    <ToastContainer />
     <Cabecalho/>
     <header className="pagamento">
       <div className='ti'><h2>Pagamento</h2>
@@ -29,9 +30,9 @@ export default function Cagamento() {
           <h1 className='h1'>*CAMPO OBRIGATÓRIO </h1>
         </div>
 
-        <Pagamento />
+        <Pagamento concluido={setConcluido}/>
 
-        <button className='finalizar' onClick={handleClick}>Finalizar</button>
+
       </div>
       </article>
     </header>

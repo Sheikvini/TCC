@@ -1,412 +1,366 @@
 import React, { useState } from 'react';
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
+import { url } from '../../constants';
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+export default function Pagamento(props) {
+
+  const [nome, setNome] = useState('');
+  const [nascimento, setNasciemento] = useState('');
+  const [formadepagamento, setFormadepagamento] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [tpendereco, setTpendereco] = useState('');
+  const [cep, setCep] = useState('');
+  const [necomplemento, setNecomplemento] = useState('');
+  const [nomerua, setNomerua] = useState('');
+  const [bairro, setBairro] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [estado, setEstado] = useState('');
+  const [parcelas, setParcelas] = useState('');
+  const [numerocartao, setNumerocartao] = useState('');
+  const [vencimento, setVencimento] = useState('');
+  const [cvc, setCvc] = useState('');
+  const [erro, setError] = useState('');
+  const navigate = useNavigate();
 
 
-export default function Pagamento() {
-  const [info1, setInfo1] = useState('');
-  const [info2, setInfo2] = useState('');
-  const [info3, setInfo3] = useState('');
-  const [info4, setInfo4] = useState('');
-  const [info5, setInfo5] = useState('');
-  const [info6, setInfo6] = useState('');
-  const [info7, setInfo7] = useState('');
-  const [info8, setInfo8] = useState('');
-  const [info9, setInfo9] = useState('');
-  const [info10, setInfo10] = useState('');
-  const [info11, setInfo11] = useState('');
-  const [info12, setInfo12] = useState('');
 
 
-  const handleInfo1Change = (event) => {
-    setInfo1(event.target.value);
-  };
-
-  const handleInfo2Change = (event) => {
-    setInfo2(event.target.value);
-  };
-
-  const handleInfo3Change = (event) => {
-    setInfo3(event.target.value);
-  };
-
-  const handleInfo4Change = (event) => {
-    setInfo4(event.target.value);
-  };
-
-  const handleInfo5Change = (event) => {
-    setInfo5(event.target.value);
-  };
-
-  const handleInfo6Change = (event) => {
-    setInfo6(event.target.value);
-  };
-
-  const handleInfo7Change = (event) => {
-    setInfo7(event.target.value);
-  };
-
+  async function pagar() {
+    // let dados = {
+      //   nome: nome,
+      //   nascimento: nascimento,
+      //   formadepagamento: formadepagamento,
+      //   cpf: cpf,
+      //   telefone: telefone,
+    //   tpendereco: tpendereco,
+    //   cep: cep,
+    //   necomplemento: necomplemento,
+    //   nomerua: nomerua,
+    //   bairro: bairro,
+    //   cidade: cidade,
+    //   estado: estado,
+    //   parcelas: parcelas,
+    //   numerocartao: numerocartao,
+    //   vencimento: vencimento,
+    //   cvc: cvc
+    // }
+    
+    try {
+      
+      if (!nome)
+        throw new Error('⚠ Nome obrigatório');
   
-  const handleInfo8Change = (event) => {
-    setInfo8(event.target.value);
-  };
+           if (!nascimento)
+          throw new Error('⚠ Nascimento obrigatório');
+  
+           if (!formadepagamento)
+          throw new Error('⚠ Forma de Pagamento obrigatório');
+  
+           if (!cpf)
+          throw new Error('⚠ CPF obrigatório');
+    
+           if (!telefone)
+          throw new Error('⚠ Telefone obrigatório');
+  
+          if (!tpendereco)
+          throw new Error('⚠ Tipo de Endereço obrigatório');
+  
+           if (!cep)
+          throw new Error('⚠ CEP obrigatório');
+  
+           if (!necomplemento)
+          throw new Error('⚠ N° Complemento obrigatório');
+  
+          if (!nomerua)
+          throw new Error('⚠ Nome da Rua obrigatório');
+  
+           if (!bairro)
+          throw new Error('⚠ Bairro obrigatória');
+  
+           if (!cidade)
+          throw new Error('⚠ Cidade obrigatório');
+  
+           if (!estado)
+          throw new Error('⚠ Estado obrigatória');
+  
+           if (!parcelas)
+          throw new Error('⚠ Parcelas obrigatórias');
+  
+           if (!numerocartao)
+          throw new Error('⚠ Número do Cartão obrigatório');
+  
+          if (!vencimento)
+          throw new Error('⚠Vencimento obrigatório');
+  
+          if (!cvc)
+          throw new Error('⚠ CVC do Cartão obrigatório');
+      
+        else
+          props.concluido(true)
+        
+    } catch (err) {
+      if (err.response) {
+        toast.error(err.response.data.erro)
+      } else {
+        toast.error(err.message)
+      }
 
-  const handleInfo9Change = (event) => {
-    setInfo9(event.target.value);
-  };
+    }
 
-  const handleInfo10Change = (event) => {
-    setInfo10(event.target.value);
-  };
+  }
 
-  const handleInfo11Change = (event) => {
-    setInfo11(event.target.value);
-  };
-
-  const handleInfo12Change = (event) => {
-    setInfo12(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-  };
 
   return (
-    <div className='caixinha2'>        
-        <form onSubmit={handleSubmit}>
-        
-        <section>
-          <div className='nome'>
+    <div className='caixinha2'>
+      <ToastContainer />
 
-            <span>   
-              <input
-                type="text"
-                placeholder="*Nome completo"
-                value={info1}
-                onChange={handleInfo1Change}
-              
-              />
+      <section>
+        <div className='nome'>
 
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
+          <span>
+            <input
+              type="text"
+              placeholder="*Nome completo"
+              value={nome}
+              onChange={e => setNome(e.target.value)}
 
-                />
-              </button>
-            </span>  
-          </div> 
-        
-          <div className='datadenascimento'>
-              <span>  
-                <input  className='Datadenascimento'
-                  type="date" 
-                  placeholder="*Data de nascimento"
-                value={info2}
-                onChange={handleInfo2Change}
-              />
-          
-            </span>  
-          </div> 
-        </section>
-        
-        <section>  
-          <div className='formadepagamento'>
-              <span>  
-                <input 
-                  type="text" 
-                  placeholder="*Forma de pagamento" 
-                  value={info3}
-                  onChange={handleInfo3Change}
-                />
-                <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
+            />
+          </span>
+        </div>
 
-                />
-              </button>
-              </span>  
-          </div> 
 
-          <div className='cpf1'>
-            <span>
-              <input
-                type="text"
-                placeholder="*CPF"
-                value={info4}
-                onChange={handleInfo4Change}
-              />
-              
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
+        <div className='datadenascimento'>
+          <span>
+            <input className='Datadenascimento'
+              type="date"
+              placeholder="*Data de nascimento"
+              value={nascimento}
+              onChange={e => setNasciemento(e.target.value)}
+            />
 
-                  />
-              </button>
-            </span>    
-          </div>
-        </section>
+          </span>
+        </div>
+      </section>
 
-        <section>
-          <div className='telefone1'>
-            <span>
-              <input 
-                type="text"
-                placeholder="*Seu telefone"
-                value={info5}
-                onChange={handleInfo5Change}
-              />
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
+      <section>
+        <div className='formadepagamento'>
+          <span>
+            <select className='formadepagamento'
+              name=""
+              id=""
+              value={formadepagamento}
+              onChange={e => setFormadepagamento(e.target.value)}>
+              <option>Forma de pagamento</option>
+              <option>Débito</option>
+              <option>Crédito</option>
 
-                />
-              </button>
-            </span>
-          </div>
+            </select>
 
-          <div className='tpendereco'>
-            <span>
-              <input
-                type="text"
-                placeholder="*Tipo de endereço"
-                value={info6}
-                onChange={handleInfo6Change}
-              />
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
+          </span>
+        </div>
 
-                />
-              </button>
-            </span>  
-          </div>
-        </section>  
 
-        <section>
-          <div className='cep1'>
-            <span>  
-              <input 
-                type="text"
-                placeholder="*CEP"
-                value={info7}
-                onChange={handleInfo7Change}
-              />
-            
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-                />
-                </button>
-              </span>
-          </div>
+        <div className='cpf1'>
+          <span>
+            <input
+              type="text"
+              placeholder="*CPF"
+              value={cpf}
+              onChange={e => setCpf(e.target.value)}
+            />
 
-          <div className='neomplemento'>
-            <span>
-              <input 
-                type="text"
-                placeholder="*N° e complemento"
-                value={info8}
-                onChange={handleInfo8Change}
-              />
-              <button >
-                <img
-                  src= 'assets/img/icon/alterar_icone.png'
-                  alt="Alterar"
-                  width="10"
-                  height="10"
-                />
-              </button>
-            </span> 
-          </div>
-        </section>
+
+          </span>
+        </div>
+      </section>
+
+      <section>
+        <div className='telefone1'>
+          <span>
+            <input
+              type="number"
+              placeholder="*Seu telefone"
+              value={telefone}
+              onChange={e => setTelefone(e.target.value)}
+            />
+
+          </span>
+        </div>
+
+        <div className='tpendereco'>
+          <span>
+            <select className='sexo'
+              name=""
+              id=""
+              value={tpendereco}
+              onChange={e => setTpendereco(e.target.value)}>
+
+              <option>Tipo de endereço</option>
+              <option>Residencial</option>
+              <option>Comercial</option>
+
+            </select>
+
+          </span>
+        </div>
+      </section>
+
+      <section>
+        <div className='cep1'>
+          <span>
+            <input
+              type="number"
+              placeholder="*CEP"
+              value={cep}
+              onChange={e => setCep(e.target.value)}
+            />
+
+
+          </span>
+        </div>
+
+        <div className='necomplemento'>
+          <span>
+            <input
+              type="text"
+              placeholder="*N° e complemento"
+              value={necomplemento}
+              onChange={e => setNecomplemento(e.target.value)}
+            />
+
+          </span>
+        </div>
+      </section>
       <section>
         <div className='nomerua'>
-        
-          <span>  
-            <input 
+
+          <span>
+            <input
               type="text"
               placeholder="*Nome da rua"
-              value={info9}
-              onChange={handleInfo9Change}
+              value={nomerua}
+              onChange={e => setNomerua(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
           </span>
-        
+
         </div>
-      
+
         <div className='bairro'>
-      
-          <span>    
-            <input 
+
+          <span>
+            <input
               type="text"
               placeholder="*Bairro"
-              value={info10}
-              onChange={handleInfo10Change}
+              value={bairro}
+              onChange={e => setBairro(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
           </span>
         </div>
       </section>
 
       <section>
         <div className='cidade'>
-      
-          <span>    
-            <input 
+
+          <span>
+            <input
               type="text"
               placeholder="*Cidade"
-              value={info11}
-              onChange={handleInfo11Change}
+              value={cidade}
+              onChange={e => setCidade(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
           </span>
         </div>
-      
+
         <div className='estado'>
-      
-          <span>    
-            <input 
+
+          <span>
+            <input
               type="text"
               placeholder="*Estado"
-              value={info12}
-              onChange={handleInfo12Change}
+              value={estado}
+              onChange={e => setEstado(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
           </span>
         </div>
       </section>
 
       <section>
         <div className='parcelas'>
-      
-          <span>    
-            <input 
-              type="text"
-              placeholder="*Parcele em até 5x"
-              value={info11}
-              onChange={handleInfo11Change}
-            />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
+          <span>
+            <select className='parcelas'
+              name=""
+              id=""
+              value={parcelas}
+              onChange={e => setParcelas(e.target.value)}>
+
+              <option>*Quantidade de parcelas</option>
+              <option>1x</option>
+              <option>2x</option>
+              <option>3x</option>
+              <option>4x</option>
+              <option>5x</option>
+
+            </select>
+
           </span>
         </div>
-      
+
         <div className='numerocartao'>
-      
-          <span>    
-            <input 
-              type="text"
+
+          <span>
+            <input
+              type="number"
               placeholder="*N° do cartão"
-              value={info12}
-              onChange={handleInfo12Change}
+              value={numerocartao}
+              onChange={e => setNumerocartao(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
           </span>
         </div>
       </section>
 
       <section>
         <div className='vencimento'>
-      
-          <span>    
-            <input 
-              type="text"
+
+          <span>
+            <input
+              type="number"
               placeholder="*Vencimento"
-              value={info11}
-              onChange={handleInfo11Change}
+              value={vencimento}
+              onChange={e => setVencimento(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
           </span>
         </div>
-      
+
         <div className='cvc'>
-      
-          <span>    
-            <input 
-              type="text"
+
+          <span>
+            <input
+              type="number"
               placeholder="*CVC"
-              value={info12}
-              onChange={handleInfo12Change}
+              value={cvc}
+              onChange={e => setCvc(e.target.value)}
             />
-            <button >
-              <img
-                src= 'assets/img/icon/alterar_icone.png'
-                alt="Alterar"
-                width="10"
-                height="10"
-              />
-            </button>
+
+    
+
           </span>
+          
         </div>
       </section>
+      <button className='finalizar' onClick={() => pagar()}>Finalizar</button>
 
-      </form>
     </div>
   );
 }

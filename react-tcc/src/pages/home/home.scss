@@ -351,10 +351,9 @@
 
 @media only screen and (max-width: 468px) {
     .inicial {
-      flex-direction: column;
-      max-width: 60%;
-      position:relative ;
-      left: 130px;
+      
+      position:absolute ;
+      left: -130px;
 
     p{
         position: absolute ;
@@ -461,7 +460,7 @@
     }
     .azul{
         
-        background-size: auto;
+        background-size: 100px;
     }
 }
   

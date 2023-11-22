@@ -5,6 +5,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .formadepagamento{
+      display: flex;
+    position: relative;
+    align-items: center;
+    width: 400px;
+    right: 3px;
+    border-radius: 20px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    border-color: #2B75CB;
+    }
+    
+   
+
+    .parcelas{
+        display: flex;
+      position: relative;
+      align-items: center;
+      width: 400px;
+      right: 3px;
+      border-radius: 20px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      padding-left: 20px;
+      border-color: #2B75CB;
+
+    }
   
     section{
       display: flex;
@@ -39,6 +70,8 @@
               justify-content: center;
               padding-left: 20px;
             }
+
+            
   
             button{
               border: none;
@@ -48,6 +81,8 @@
             }
         }
       }
+
+      
   
       .datadenascimento{
         input{
@@ -56,6 +91,10 @@
           right: 10px;
         }
       }
+      
+    }
+    .finalizar{
+      margin-top: 20px;
     }
     
   

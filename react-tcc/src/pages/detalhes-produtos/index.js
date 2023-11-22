@@ -40,7 +40,7 @@ export default function Tintasinternas() {
             Storage('carrinho', carrinho);
             
         }  
-         toast.success('Produto adicionado ao carrinho!');
+         alert('Produto adicionado ao carrinho!');
      }
 
     useEffect(() => {
@@ -75,13 +75,10 @@ export default function Tintasinternas() {
                                         <p className="desc">{item.ds_descricao }</p>
                                         <p>Tipo: {item.ds_tipo}</p>
                                         
-                                        <div className="text-addcar" onClick={AdicionarCarrinho}>
-                                            <img className="addcar-prod" src="/assets/img/icon/carrinhoazul.png"></img>
-                                            <p  >Adicionar ao carrinho</p>
-                                        </div>
+                                        
                                        
-                                        <Link to={'/pagamento'}>
-                                            <button>Comprar</button> 
+                                        <Link className= 'but-car' onClick={AdicionarCarrinho}>
+                                            <button>Adicionar ao carrinho</button> 
                                         </Link>
                                     </div>
                                     

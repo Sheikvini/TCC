@@ -11,6 +11,13 @@ export default function Carrinho() {
 
     const [itens, setItens] = useState([]);
 
+    function removerItem(id){
+        let carrinho = Storage('carrinho');
+        carrinho = carrinho.filter(item => item.id !== id);
+
+        Storage ('carrinho', carrinho);
+        carregarCarinho();
+    }
 
     async function carregarCarinho() {
         let carrinho = storage('carrinho');
@@ -94,7 +101,7 @@ export default function Carrinho() {
                 <div className="carrinho">
                     <div className="itens">
                         {itens.map((item) =>
-                            <CarrinhoItem item={item} />
+                            <CarrinhoItem item={item} removerItem={removerItem} />
                         )}
                     </div>
 
@@ -103,7 +110,6 @@ export default function Carrinho() {
 
                     <div className="resumo">
                         <h1>Subtotal</h1>
-                        <h3>(3 itens)</h3>
                         <p>R$ {valortotal()} </p>
                         <button>Fechar Pedido</button>
                     </div>

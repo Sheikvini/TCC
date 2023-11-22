@@ -22,21 +22,45 @@
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         
         
-        Img{
-
-        height: 80px;  
-        }
-
+       
         button{
             border: none;
             background:none;
 
-            img{
-                height: 50px;
-
+            .car-usu{
+                display: flex;
+                
+    
+            .C{
+                height: 40px;
+                position: relative;
+                right: 65px;
+                top: -18px;  
+                }
+    
+            .icon-usuario{ 
+                display: flex;
+                justify-content: center;
+                align-items: center;       
+                flex-direction: column;
+                text-decoration: none;
+                color: #5f00f7;
+                
+                .M{
+                    position: relative;
+                    height: 40px;
+                    right: 38px;
+                    top: -15px;
+                }   
+    
+                .nome-usuario{
+                    position: relative;
+                    bottom: 30px;
+                    right: 39px;
+                    
+                }
             }
-        }
-
+         }   
 
         .search-bar{
             border: 1px solid rgba(155, 155, 155, 0.336);
@@ -97,3 +121,4 @@
 
 }
 
+} 

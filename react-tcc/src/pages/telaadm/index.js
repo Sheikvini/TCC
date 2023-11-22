@@ -33,19 +33,19 @@ export default function telaadm(){
                             </div>
                         </Link>
 
-                        {/* <Link  className="BD" to={'/pesquisa-produtos'}>
+                         <Link  className="BD" to={'/pesquisa-produtos'}>
                             <div>
                                 <img src="./assets/img/icon/imagelupa.png" height={50} width={50} ></img>
                                 <h5> Buscar Produtos</h5>
                             </div>
                         </Link>
 
-                        <Link className="PR" to={'/compras'}>
+                        {/* <Link className="PR" to={'/compras'}>
                             <div>
                                 <img src="./assets/img/icon/imagerelatorio.png" height={50} width={50} ></img>
                                 <h5>Relatórios de compra</h5>
                             </div> 
-                        </Link> */}
+                        </Link> */} 
 
                     </header>
 

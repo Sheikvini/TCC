@@ -17,7 +17,7 @@ export default function Cagamento() {
     <header className="pagamento">
       <div className='ti'><h2>Pagamento</h2>
       </div>
-      <Link to="/">
+      <Link to="/carrinho">
                 <img className='botao-voltar100' src="/assets/img/icon/botao-voltar.png" alt="Voltar" />
             </Link>
             

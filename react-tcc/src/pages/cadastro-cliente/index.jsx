@@ -5,6 +5,9 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 import axios from 'axios';
 import { url } from '../../constants';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Cadastro = () => {
 
@@ -31,6 +34,7 @@ const Cadastro = () => {
   async function entrar() {
     setCarregando(true);
     setErro('');
+    navigate('/login');
 
   let dados = {
     nome: nome,
@@ -61,11 +65,12 @@ const Cadastro = () => {
     } else {
       setErro(err.erro.erro)
     }
-    
+    toast.success('Cadastrado com sucesso!');
   }
 }
   return (
 <article className='cont-cadastro'>
+    <ToastContainer />
     <Cabecalho/>
     <header className="cadastro">
       <section className='princ-cadastro'>

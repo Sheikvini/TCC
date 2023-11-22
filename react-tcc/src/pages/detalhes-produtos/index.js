@@ -6,20 +6,21 @@ import Storage from "local-storage"
 import axios from "axios"
 import { url } from "../../constants"
 import { Link, useParams } from "react-router-dom"
-import { toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Tintasinternas() {
     const [produtos, setProdutos] = useState([])
-    const {id} = useParams()
-
+    const { id } = useParams()
+    
 
     async function listarProdutos(){
         const resp = await axios.get( url + '/produto')
         const idNumber = Number(id)
-
+        
         const respFiltrados = resp.data.filter(item => item.id_produto === idNumber)
-
+        console.log(respFiltrados);
         setProdutos(respFiltrados)
 
     }
@@ -32,15 +33,14 @@ export default function Tintasinternas() {
 
         if (!carrinho.find(item => item.id === id)){
             carrinho.push({
-                id:id,
+                id: id,
                 qtd:1
-               
             })
            
             Storage('carrinho', carrinho);
             
         }  
-         alert('Produto adicionado ao carrinho!');
+         toast.success('Produto adicionado ao carrinho!');
      }
 
     useEffect(() => {
@@ -49,6 +49,7 @@ export default function Tintasinternas() {
 
         return (
             <article>
+                <ToastContainer />
                 <Cabecalho />
             
                 <div className="cont-det">

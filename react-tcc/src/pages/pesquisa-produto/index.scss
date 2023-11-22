@@ -1,13 +1,16 @@
 .mae-buscar {
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../../../public/assets/img/fundo3.png);
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100%;
+    
 
     .busca-produto{
     
-        background-image: url(../../../public/assets/img/fundo3.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 400px;
+        
     
         .text-busca-produto{
             text-align: center;
@@ -15,9 +18,7 @@
     
     
     .P{
-        background-image: url(../../../public/assets/img/fundo3.png);
-        background-repeat: no-repeat;
-        background-size: cover;
+        
     }
 }
 
@@ -56,3 +57,9 @@ tbody {
 
 
 }
+
+.rod-carrinho{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }

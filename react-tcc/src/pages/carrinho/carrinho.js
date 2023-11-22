@@ -7,15 +7,17 @@ import storage from "local-storage";
 import { buscarProdutoPorId } from "../../api/produtoAPI";
 import CarrinhoItem from "../../components/carrinhoitem";
 
+
 export default function Carrinho() {
 
     const [itens, setItens] = useState([]);
+    const [renderizar, setRenderizar] = useState('')
 
     function removerItem(id){
-        let carrinho = Storage('carrinho');
-        carrinho = carrinho.filter(item => item.id !== id);
-
-        Storage ('carrinho', carrinho);
+        let carrinho = storage('carrinho');
+        console.log(carrinho[0]);
+        carrinho = carrinho.filter(item => item.id != id);
+        storage ('carrinho', carrinho);
         carregarCarinho();
     }
 
@@ -27,13 +29,12 @@ export default function Carrinho() {
 
             for (let produto of carrinho) {
                 let p = await buscarProdutoPorId(produto.id);
-
+                console.log(produto);
                 temp.push({
                     produto: p,
                     qtd: produto.qtd
                 })
             }
-            console.log(temp);
             setItens(temp);
         }
 
@@ -41,17 +42,24 @@ export default function Carrinho() {
 
     function valortotal() {
         let total = 0;
-        for (let item of itens) {
-            
-            if (item.produto)
-                total += item.produto.vl_preco * 1
 
+        if(itens) {
+            console.log(itens);
+            for (let cont = 0; cont < itens.length; cont++) {
+                let carrinho = storage('carrinho')
+                let [itemStorage] = carrinho.filter(item => item.id == itens[cont].produto.id_produto)
+                console.log(itemStorage);
+                total += itens[cont].produto.vl_preco * itemStorage.qtd
+
+            }
+            return total.toFixed(2)
         }
-        return total.toFixed(2)
 
 
     }
-
+    useEffect(() => {
+        valortotal()
+    }, [storage('carrinho')])
     useEffect(() => {
         carregarCarinho();
     }, [])
@@ -101,18 +109,19 @@ export default function Carrinho() {
                 <div className="carrinho">
                     <div className="itens">
                         {itens.map((item) =>
-                            <CarrinhoItem item={item} removerItem={removerItem} />
+                            <CarrinhoItem item={item} removerItem={removerItem} renderizar={setRenderizar}/>
                         )}
                     </div>
 
 
 
-
-                    <div className="resumo">
-                        <h1>Subtotal</h1>
-                        <p>R$ {valortotal()} </p>
-                        <button>Fechar Pedido</button>
-                    </div>
+                    
+                        <div className="resumo">
+                            <h1>Subtotal</h1>
+                            <p>R$ {valortotal()} </p>
+                           <Link to={'/pagamento'}> <button>Fechar Pedido</button>  </Link>
+                        </div>
+                  
                 </div>
             </section>
             <footer className="rod-carrinho">

@@ -47,7 +47,7 @@ export default function Perfil() {
                 </div>
            </div>
            </section> 
-           <footer className="rod-carrinho">
+           <footer className="rod-carrinho1">
                 <Rodape />
             </footer>
         </article>

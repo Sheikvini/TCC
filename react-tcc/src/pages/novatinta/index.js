@@ -5,7 +5,8 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cabecalho from '../../components/cabecalho-semrotas/index.js';
 import axios from 'axios';
 import { url } from '../../constants';
-import { toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const CadastroProduto = () => {
   const [img, setImg] = useState('');
@@ -30,7 +31,7 @@ const CadastroProduto = () => {
     setCarregando(true);
     setErro('');
 
-    toast.dark('Produto adicionado ao carrinho!');
+    
     
   let dados = {
     img:img,
@@ -61,9 +62,11 @@ const CadastroProduto = () => {
     }
     
   }
+  toast.success('Produto adicionado ao carrinho!');
 }
   return (
 <article className='cont-cadastro'>
+    <ToastContainer/>
     <Cabecalho/>
     <header className="cadastro">
       <section className='princ-cadastro'>

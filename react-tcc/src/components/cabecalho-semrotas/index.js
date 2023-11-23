@@ -6,7 +6,7 @@ import axios from 'axios'
 import { url } from '../../constants';
 
 
-const Cabecalho = () => {
+const Cabecalho1 = () => {
     
   const [pesquisa, setPesquisa] = useState('');
   const [usuario,setUsuario  ] = useState('');
@@ -23,19 +23,6 @@ const Cabecalho = () => {
       }
     }, [])
 
-    
-
-async function pesquisarProduto(e) {
-  if(e.key === 'Enter'){
-    const resp = await axios.get(url +`/pesquisa/${pesquisa}`)
-    const produto = resp.data
-    console.log(produto);
-    navigate(`/detalhes-produtos/${produto.id_produto}`)
-  }
-  
-
-}
-
   return (
     <header className="principal-sn">
       
@@ -45,22 +32,23 @@ async function pesquisarProduto(e) {
         </Link>
         
 
-       <div>
+        <div>
         <button>
             <img></img>
         </button>
-        <section className='car-usu'>
 
-<Link to='/carrinho'>
-    <img className='C' src="/assets/img/icon/imagecarrinho.png"></img>
-</Link>
-<Link className='icon-usuario' to='/perfil'>
-    <img className='M' src="/assets/img/icon/imageadm.png"></img>
+      <section className='car-usu1'>
 
-    <p className='nome-usuario'>{usuario}</p>
-                      
-</Link>
-</section>
+        <Link to='/carrinho'>
+            <img className='C1' src="/assets/img/icon/imagecarrinho.png"></img>
+        </Link>
+        <Link className='icon-usuario1' to='/perfil'>
+            <img className='M1' src="/assets/img/icon/imageadm.png"></img>
+
+            <p className='nome-usuario1'>{usuario}</p>
+                              
+        </Link>
+        </section>
        </div>
       </section>
 
@@ -75,4 +63,4 @@ async function pesquisarProduto(e) {
   );
 };
 
-export default Cabecalho;
+export default Cabecalho1;

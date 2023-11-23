@@ -69,23 +69,7 @@ export default function Carrinho() {
             <Cabecalho />
             <section className="principal-carrinho">
 
-                <h1 className="submenu-carrinho">
-                    <Link className='link_C' to={'/carrinho'}>
-                        <button className="C">Carrinho</button>
-                    </Link>
-
-                    <Link className='link_mp' to={'/rastreio'}>
-                        <button className="MP" >Rastrear</button>
-                    </Link>
-
-                    <Link className='link_R' to={'/sobrenos'}>
-                        <button className="R">Sobre nós</button>
-                    </Link>
-
-                    <Link className='link_TU' to={'/termosuso'}>
-                        <button className="TU">Termos de Uso</button>
-                    </Link>
-                </h1>
+                
 
                 <section className="container-carrinho">
                     <Link to="/">
@@ -123,10 +107,8 @@ export default function Carrinho() {
                         </div>
                   
                 </div>
-            </section>
-            <footer className="rod-carrinho">
                 <Rodape />
-            </footer>
+            </section>
         </header>
     )
 } 

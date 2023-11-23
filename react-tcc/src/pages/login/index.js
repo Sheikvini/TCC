@@ -102,7 +102,7 @@ const Login = () => {
 
                 <div className='n-conta'>
                     <p>Não possuí uma conta?</p>
-                    <a href='/login-cadastro'>Crie agora</a>
+                   <Link to={'/login-cadastro'}>Crie agora</Link>
                 </div>
             </section>
             

@@ -27,7 +27,7 @@ export async function  buscarProdutoPorId(id){
 }
 
 export async function deletarProduto(id){
-    const comando = 'delete * from tb_produto where id = ?';
+    const comando = 'delete from tb_produto where id_produto = ?';
 
     const [resposta] = await conexao.query(comando, [id]);
 

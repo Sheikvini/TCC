@@ -2,7 +2,7 @@ import './index.scss';
 
 import React, {useContext, useState} from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import Cabecalho from '../../components/cabecalho-semrotas/index.js';
+import Cabecalho from '../../components/cabecalho-cadastro/index.js';
 import axios from 'axios';
 import { url } from '../../constants';
 import { ToastContainer, toast } from 'react-toastify'
@@ -27,6 +27,12 @@ const Cadastro = () => {
   const [email, setEmail] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
+  const [concluido, setConcluido] = useState(false)
+  
+
+  if(concluido)
+    toast.success('Pedido concluído')
+
 
   const navigate = useNavigate();
   
@@ -34,7 +40,7 @@ const Cadastro = () => {
   async function entrar() {
     setCarregando(true);
     setErro('');
-    navigate('/login');
+    
 
   let dados = {
     nome: nome,
@@ -59,14 +65,22 @@ const Cadastro = () => {
     if( response.status === 204 ) {
       navigate('/');
     }
+    if(!nome){
+      toast.error('Nome Obrigatorio')
+    }
+
+    toast.success('Cadastrado com sucesso!');
+   
   } catch (err) {
     if(err.response) {
       setErro(err.response.data.erro)
     } else {
       setErro(err.erro.erro)
     }
-    toast.success('Cadastrado com sucesso!');
+    
+   
   }
+ 
 }
   return (
 <article className='cont-cadastro'>

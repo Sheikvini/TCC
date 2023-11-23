@@ -6,22 +6,14 @@ import axios from 'axios'
 import { url } from '../../constants';
 
 
-const Cabecalho1 = () => {
+const Cabecalho2 = () => {
     
   const [pesquisa, setPesquisa] = useState('');
   const [usuario,setUsuario  ] = useState('');
   const [nome,setNome] = useState('');
   const navigate = useNavigate();
   
-  useEffect(() => {
-    if(!storage('usuario-logado')){
-        navigate('/');
-    }
-    else{
-      const usuariologado = storage('usuario-logado')
-      setUsuario(usuariologado.email)
-      }
-    }, [])
+  
 
   return (
     <header className="principal-sn">
@@ -63,4 +55,4 @@ const Cabecalho1 = () => {
   );
 };
 
-export default Cabecalho1;
+export default Cabecalho2;

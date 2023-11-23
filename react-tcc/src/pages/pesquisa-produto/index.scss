@@ -1,65 +1,75 @@
+.custom-ui{
+    button{
+        background-color: #2B75CB;
+        margin: 10px;
+        border: none; 
+        color: #ffffff;
+        font-size: 14px;
+        padding:5px  15px;
+        font-weight: 600;
+        border-radius: 10px;
+        
+    }
+}
+
 .mae-buscar {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    background-image: url(../../../public/assets/img/fundo3.png);
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size: 100%;
+    flex-direction: column;
     
+    h1{
+        color: #2B75CB;
+        padding: 30px;
+    }
 
-    .busca-produto{
-    
-        
-    
-        .text-busca-produto{
+    div{
+        max-height: 470px; 
+        overflow-y: auto;
+       
+       div::-webkit-scrollbar {
+       background-color: #2B75CB;
+       }
+       
+       
+
+
+        table {
             text-align: center;
-        }
+            height: 400px !important;
+            overflow: auto;
+            
+            
+            thead {
+
+                tr {
+                    border: 1px solid black;
+                }
+
+                
+            }
+
+
+            tbody {
+
+                tr {
+
+                    td {
+                        margin-top: 100px;
+                        padding: 30px;
+                        border: 2px solid #2B75CB;
+
+                        button{
+                            background-color: transparent;
+                            border: none;
+                        }
+                          }
+                    }
+                }
+            }
+
+
+
+    }
     
-    
-    .P{
-        
-    }
-}
-
-
-table {
-
-
-
-thead {
-
-    tr {
-        border: 1px solid black;
-    }
-
-    th {
-
-    }
-}
-
-
-tbody {
-  
-    tr {
-
-        td {
-            margin-top: 100px;
-            padding: 30px;
-            border: 1px solid black;
-        }
-    }
-}
-
-
 
 }
-
-
-}
-
-.rod-carrinho{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }

@@ -70,7 +70,7 @@ const Cadastro = () => {
     }
 
     toast.success('Cadastrado com sucesso!');
-   
+    navigate('/login');
   } catch (err) {
     if(err.response) {
       setErro(err.response.data.erro)

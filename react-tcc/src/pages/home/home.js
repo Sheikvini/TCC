@@ -61,13 +61,8 @@ export default function Home() {
       <Element name="content">
       
       <section className={`faixas ${hasScrolled ? 'scroll-animation show' : 'scroll-animation'}`}>
-        <div className='azul'>
-          <div>
-          <Link to="/homej">
-          <button>GAME</button>
-          </Link>
-          </div>
-        </div>
+        
+          
 
         <div className='internas'>
          <div>

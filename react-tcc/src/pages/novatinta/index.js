@@ -62,7 +62,7 @@ const CadastroProduto = () => {
     }
     
   }
-  toast.success('Produto adicionado ao carrinho!');
+  toast.success('Produto Cadastrado!');
 }
   return (
 <article className='cont-cadastro'>

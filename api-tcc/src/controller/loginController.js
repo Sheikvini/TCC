@@ -15,7 +15,7 @@ endpoint.post('/login', async (req, resp) => {
     if(!senha)
     throw new Error('Senha obrigatório')
 
-    if(resposta.length < 1)
+    if(!resposta)
       throw new Error('Senha ou Usuário incorretos');
 
       resp.send(resposta);

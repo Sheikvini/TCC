@@ -5,6 +5,7 @@
     justify-content: center;
     height: 100%;
     width: 100;
+    align-items: center;
 
     >h1 {
         color: #2B75CB;
@@ -32,12 +33,13 @@
                 
                     display: flex;
                     border-radius: 4px;
-                    background: #F9F9F9;
+                    background: #fafafa;
                     width:250px;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     padding: 10px;
+                    align-items: center;
                 
                     .link-delt{
                         text-decoration: none;
@@ -47,6 +49,8 @@
                     img{
                         width: 200px;
                         height: 230px;
+                        position: relative;
+                        left: 25px;
                     }
                 h1{
                     font-size: 22px;
